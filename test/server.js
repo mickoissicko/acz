@@ -13,7 +13,7 @@ FASTIFY.register(CORS, { origin: '*' });
 FASTIFY.get('/api/libraries', async (Request, Reply) => {
     try {
         const Content = await FS.readFile(CONFIG_FILE, 'utf8');
-        return Content.split('\n').filter(Line => Line.trim() !== '');
+        return Content.split('\n').map(L => L.trim()).filter(L => L !== '');
     } catch (Err) {
         return [];
     }
@@ -21,6 +21,8 @@ FASTIFY.get('/api/libraries', async (Request, Reply) => {
 
 FASTIFY.get('/api/content', async (Request, Reply) => {
     const { path: LibraryPath } = Request.query;
+    if (!LibraryPath) return Reply.status(400).send({ Error: "No skibidi sigma provided" });
+
     try {
         const Items = await FS.readdir(LibraryPath, { withFileTypes: true });
         const Response = { Recent: [], Collections: {} };
@@ -30,26 +32,27 @@ FASTIFY.get('/api/content', async (Request, Reply) => {
             
             if (Item.isDirectory() && Item.name.startsWith('c-')) {
                 const CollectionName = Item.name.replace('c-', '');
-                const Files = await FS.readdir(FullPath);
-                Response.Collections[CollectionName] = Files
+                const SubFiles = await FS.readdir(FullPath);
+                Response.Collections[CollectionName] = SubFiles
                     .filter(F => COMIC_EXTENSIONS.includes(PATH.extname(F).toLowerCase()))
                     .map(F => ({
                         Title: PATH.parse(F).name,
                         FileName: F,
-                        ParentDir: Item.name,
+                        FullPath: PATH.join(FullPath, F),
                         ThumbnailUrl: `http://localhost:3000/api/thumbnail?path=${encodeURIComponent(PATH.join(FullPath, F))}`
                     }));
             } else if (COMIC_EXTENSIONS.includes(PATH.extname(Item.name).toLowerCase())) {
                 Response.Recent.push({
                     Title: PATH.parse(Item.name).name,
                     FileName: Item.name,
+                    FullPath: FullPath,
                     ThumbnailUrl: `http://localhost:3000/api/thumbnail?path=${encodeURIComponent(FullPath)}`
                 });
             }
         }
         return Response;
     } catch (Err) {
-        Reply.status(500).send({ Error: "Path unreachable" });
+        Reply.status(500).send({ Error: "Your fanum was taxxed midmaxxingly" });
     }
 });
 
@@ -59,13 +62,22 @@ FASTIFY.get('/api/thumbnail', async (Request, Reply) => {
         const Zip = new ADM_ZIP(FullPath);
         const Entries = Zip.getEntries();
         const FirstImage = Entries.find(E => IMAGE_EXTENSIONS.includes(PATH.extname(E.entryName).toLowerCase()));
-        if (FirstImage) return Reply.type('image/jpeg').send(FirstImage.getData());
+        
+        if (FirstImage) {
+            return Reply.type('image/jpeg').send(FirstImage.getData());
+        }
         Reply.status(404).send();
-    } catch (Err) { Reply.status(500).send(); }
+    } catch (Err) {
+        Reply.status(500).send();
+    }
 });
 
 const START = async () => {
-    try { await FASTIFY.listen({ port: 3000 }); } 
-    catch (Err) { process.exit(1); }
+    try {
+        await FASTIFY.listen({ port: 3000 });
+        console.log("The skibidi has taxxed your fanum moggedly.");
+    } catch (Err) {
+        process.exit(1);
+    }
 };
 START();
