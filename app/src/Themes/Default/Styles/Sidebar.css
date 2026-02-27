@@ -1,0 +1,33 @@
+/* styling the left navigation */
+#Sidebar {
+    width: 260px;
+    background-color: var(--surface-colour);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-colour);
+    margin-bottom: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.nav-links a {
+    font-size: 16px;
+    transition: color var(--transition-speed);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-primary);
+    font-weight: 600;
+}

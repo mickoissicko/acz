@@ -1,0 +1,39 @@
+/* immersive manga reader overlay */
+#MangaViewport {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 10, 12, 0.98);
+    display: none; /* hidden until a manga is opened */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.manga-page-container {
+    height: 95vh;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+.manga-page-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    user-select: none;
+}
+
+/* subtle page indicator at the bottom */
+#PageIndicator {
+    position: absolute;
+    bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}

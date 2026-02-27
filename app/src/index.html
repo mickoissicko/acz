@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <title>Mix ACZ | Anime Media Centre</title>
+
+    <link rel="stylesheet" href="Themes/Default/Styles/Variables.css">
+    <link rel="stylesheet" href="Themes/Default/Styles/Base.css">
+    <link rel="stylesheet" href="Themes/Default/Styles/Layout.css">
+    <link rel="stylesheet" href="Themes/Default/Styles/Sidebar.css">
+    <link rel="stylesheet" href="Themes/Default/Styles/Topbar.css">
+    <link rel="stylesheet" href="Themes/Default/Styles/Dashboard.css">
+    <link rel="stylesheet" href="Themes/Default/Styles/MangaReader.css">
+</head>
+<body>
+
+    <div id="AppLayout">
+        <nav id="Sidebar">
+            <div class="logo">Mix ACZ</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Anime</a></li>
+                <li><a href="#">Manga</a></li>
+                <li><a href="#">Novels</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+
+        <main id="MainWorkspace">
+            <header id="Topbar">
+                <input type="text" placeholder="Search the centre..." id="GlobalSearch">
+                <div class="user-profile">Profile</div>
+            </header>
+
+            <section id="DashboardContent">
+                <h1 id="GreetingText">Welcome Back</h1>
+                <div class="media-grid" id="MainGrid">
+                    <!-- cards injected by Main.js -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="MangaViewport">
+        <div class="manga-page-container">
+            <img src="" id="ActivePageImage" class="manga-page-image">
+        </div>
+        <div id="PageIndicator">Page 1</div>
+        <div id="CloseReader" onclick="CloseManga()" style="position:fixed; top:20px; right:20px; cursor:pointer; font-size:30px;">×</div>
+    </div>
+
+    <script src="Logic/ConfigParser.js"></script>
+    <script src="Logic/MangaReader.js"></script>
+    <script src="Logic/InputManager.js"></script>
+    <script src="Logic/Main.js"></script>
+</body>
+</html>
