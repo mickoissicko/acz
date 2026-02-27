@@ -14,22 +14,10 @@
         select option { background: #1a1a1e; color: white; }
         #ScrollContainer::-webkit-scrollbar { width: 4px; }
         #ScrollContainer::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 10px; }
-        #PageContainer {
-            background: #000;
-            width: 100vw;
-            height: 100vh;
-        }
-        #ScrollContainer img, #ActivePage {
-            pointer-events: none;
-            user-select: none;
-        }
-        #ReaderContent img {
-            pointer-events: none;
-            user-select: none;
-        }
-        #ReaderContent {
-            scroll-behavior: smooth;
-        }
+        #PageContainer { background: #000; width: 100vw; height: 100vh; }
+        #ScrollContainer img, #ActivePage { pointer-events: none; user-select: none; }
+        #ReaderContent img { pointer-events: none; user-select: none; }
+        #ReaderContent { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="p-6 md:p-12">
