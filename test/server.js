@@ -50,10 +50,19 @@ FASTIFY.get('/api/content', async (Request, Reply) => {
 });
 
 FASTIFY.get('/api/thumbnail', async (Request, Reply) => {
-    const { path: FullPath } = Request.query;
+    const { path: FullPath, page: PageName } = Request.query;
     try {
         const Zip = new ADM_ZIP(FullPath);
-        const Entry = Zip.getEntries().find(E => IMAGE_EXTENSIONS.includes(PATH.extname(E.entryName).toLowerCase()));
+        let Entry;
+        
+        if (PageName && PageName !== 'undefined') {
+            Entry = Zip.getEntry(PageName);
+        } 
+        
+        if (!Entry) {
+            Entry = Zip.getEntries().find(E => IMAGE_EXTENSIONS.includes(PATH.extname(E.entryName).toLowerCase()));
+        }
+
         if (Entry) return Reply.type('image/jpeg').send(Entry.getData());
         Reply.status(404).send();
     } catch (Err) { Reply.status(500).send(); }

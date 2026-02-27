@@ -35,7 +35,7 @@
 <body class="p-6 md:p-12">
 
     <nav class="glass-nav fixed top-0 left-0 w-full z-50 px-8 py-3 flex justify-between items-center">
-        <div class="text-xl font-extrabold tracking-tighter text-indigo-500">ÁNIME<span class="text-white">ĈIKA</span></div>
+        <div class="text-xl font-extrabold tracking-tighter text-indigo-500">MANGA<span class="text-white">ĈIKA</span></div>
         <select id="LibraryPicker" class="bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-xs font-bold outline-none hover:bg-white/10 transition cursor-pointer"></select>
     </nav>
 
@@ -43,9 +43,9 @@
         <header class="mb-12 flex justify-between items-end">
             <div>
                 <h1 id="ViewTitle" class="text-3xl font-extrabold tracking-tight text-white">Your Library</h1>
-                <p id="ViewSub" class="text-gray-500 text-sm mt-1">Let's get readin' :P</p>
+                <p id="ViewSub" class="text-gray-500 text-sm mt-1">Let's get a-readin' :P</p>
             </div>
-            <button id="BackBtn" class="hidden bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg text-xs font-bold transition">← BACK</button>
+            <button id="BackBtn" onclick="SHOW_COLLECTIONS()" class="hidden bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg text-xs font-bold transition">← BACK</button>
         </header>
 
         <section id="HeroSection" class="mb-16 hidden">
