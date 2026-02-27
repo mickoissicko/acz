@@ -1,1 +1,0 @@
-import{a2 as n}from"./index-4bec1d4c.js";import{_ as o}from"./_baseGet-2d7ec73c.js";var s=o;function u(e,t,a){var r=e==null?void 0:s(e,t);return r===void 0?a:r}var f=u;const m=n(f);export{f as a,m as g};

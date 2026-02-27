@@ -1,1 +1,0 @@
-import{r as e}from"./index-4bec1d4c.js";const o=e.createContext(void 0),n=()=>{const t=e.useContext(o);if(!t)throw new Error("useSteppedFormContext must be used within a SteppedFormProvider");return t};export{o as S,n as u};
