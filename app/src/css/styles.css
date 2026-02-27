@@ -1,0 +1,87 @@
+:root {
+    --bg: #08080a;
+    --surface: #121217;
+    --accent: #8257ff;
+    --text: #ffffff;
+    --text-dim: #9494a5;
+    --glass: rgba(255, 255, 255, 0.03);
+    --radius: 14px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* so it can like close i think */
+#TopBar {
+    height: 70px;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 1px solid var(--glass);
+    transition: transform 0.3s ease;
+    justify-content: space-between;
+}
+
+#TopBar.collapsed { transform: translateY(-100%); }
+
+.nav-tabs { display: flex; gap: 30px; }
+.nav-tab {
+    color: var(--text-dim);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.nav-tab.active, .nav-tab:hover { color: var(--accent); }
+
+/* Views */
+.view { display: none; padding: 40px; height: calc(100vh - 70px); overflow-y: auto; }
+.view.active { display: block; animation: fadeIn 0.5s ease; }
+
+/* Manga Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+.card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--glass);
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+.card:hover { border-color: var(--accent); transform: translateY(-5px); }
+.progress-bar {
+    position: absolute; bottom: 0; left: 0; height: 3px;
+    background: var(--accent); border-radius: 0 0 var(--radius) var(--radius);
+}
+
+/* Notes View */
+.notes-container { display: grid; grid-template-columns: 250px 1fr; gap: 20px; height: 80vh; }
+.notes-list { border-right: 1px solid var(--glass); overflow-y: auto; }
+.note-item { padding: 15px; cursor: pointer; border-radius: 8px; margin-bottom: 5px; }
+.note-item:hover { background: var(--glass); }
+#NoteEditor {
+    background: var(--surface); color: var(--text); border: none;
+    padding: 20px; font-size: 16px; border-radius: var(--radius); resize: none;
+}
+
+/* Reader Overlay */
+#ReaderOverlay {
+    position: fixed; inset: 0; background: #000; z-index: 2000;
+    display: none; flex-direction: column; align-items: center;
+}
+#ReaderOverlay img { max-height: 100vh; cursor: pointer; }
+.reader-controls {
+    position: fixed; bottom: 20px; background: rgba(0,0,0,0.8);
+    padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(10px);
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
