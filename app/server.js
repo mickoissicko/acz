@@ -166,6 +166,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'src', 'index.html'));
 });
 
+// --- ADD THESE TO SERVER.JS ---
+
 // CREATE COLLECTION
 app.post('/api/collections', (req, res) => {
     const mangaPath = getPathFromConfig('MANGA');
@@ -196,7 +198,7 @@ app.put('/api/manga/rename', (req, res) => {
         meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
     }
 
-    // alias w/ filename key
+    // alias w/ filename
     if (!meta.aliases) meta.aliases = {};
     const fileName = path.basename(mangaPath);
     meta.aliases[fileName] = newName;

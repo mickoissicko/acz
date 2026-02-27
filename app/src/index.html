@@ -38,7 +38,7 @@
         }
         
         #Sidebar:hover {
-            transition-delay: 1.75s; /* expand thingy */
+            transition-delay: 1.75s; /* expand thin*/
             width: var(--sidebar-expanded);
             background: var(--surface-high);
             box-shadow: 40px 0 80px rgba(0,0,0,0.9);
@@ -213,22 +213,14 @@
     </div>
 
     <script>
-        // ADD TRASH LATER
-        // "PREMIUM" SEARCH ENGINE SHOULD BE UPDATED
         const CORE = {
             state: { library: null },
-            
             async init() {
-                try {
-                    const res = await fetch('/api/library');
-                    this.state.library = await res.json();
-                    this.renderManga();
-                    this.setupTabs();
-                } catch (err) {
-                    console.error("Initialization failed:", err);
-                }
+                const res = await fetch('/api/library');
+                this.state.library = await res.json();
+                this.renderManga();
+                this.setupTabs();
             },
-    
             setupTabs() {
                 document.querySelectorAll('.nav-item[data-tab]').forEach(btn => {
                     btn.onclick = () => {
@@ -241,23 +233,16 @@
                     }
                 });
             },
-    
             renderManga(filter = "") {
                 const grid = document.getElementById('MangaGrid');
                 grid.innerHTML = '';
-                
-                // Combine collections and loose mangas
                 const items = [...this.state.library.collections, ...this.state.library.mangas];
                 
                 items.forEach(item => {
-                    // Determine Display Name (Alias if exists, otherwise the cleaned filename)
-                    const displayName = item.alias || item.name;
-    
-                    if(filter && !displayName.toLowerCase().includes(filter.toLowerCase())) return;
+                    if(filter && !item.name.toLowerCase().includes(filter.toLowerCase())) return;
                     
                     const card = document.createElement('div');
                     card.className = 'manga-card';
-                    
                     const progress = localStorage.getItem(`progress_${item.path}`) || 0;
                     const thumb = item.meta?.coverFile || item.path;
                     const page = item.meta?.coverPage !== undefined ? item.meta.coverPage : progress;
@@ -268,21 +253,17 @@
                         ${item.items ? `<div class="collection-tag">COLLECTION</div>` : ''}
                         <div class="card-overlay">
                             <p>${item.items ? item.items.length + ' VOLUMES' : 'STANDALONE'}</p>
-                            <h3>${displayName}</h3>
+                            <h3>${item.name}</h3>
                         </div>
                     `;
-    
-                    // --- CONTEXT MENU (RIGHT CLICK) ---
+
+                    // Rename (Right Click)
                     card.oncontextmenu = (e) => {
                         e.preventDefault();
-                        if(item.items) {
-                            openRenameModal(item.name, item.path); // Rename actual folder
-                        } else {
-                            openMangaRenameModal(displayName, item.path); // Set display alias
-                        }
+                        if(item.items) openRenameModal(item.name, item.path);
                     };
-    
-                    // --- DRAG & DROP LOGIC ---
+
+                    // Drag & Drop
                     if(!item.items) {
                         card.draggable = true;
                         card.ondragstart = (e) => e.dataTransfer.setData('source', item.path);
@@ -298,7 +279,7 @@
                             CORE.init();
                         };
                     }
-    
+
                     card.onclick = () => {
                         if(item.items) this.renderCollection(item);
                         else Reader.open(item.path, progress);
@@ -306,69 +287,48 @@
                     grid.appendChild(card);
                 });
             },
-    
             renderCollection(col) {
                 const grid = document.getElementById('MangaGrid');
                 grid.innerHTML = `<div class="btn-premium" style="grid-column: 1/-1; width: fit-content; margin-bottom: 20px;" onclick="CORE.renderManga()">← Back to Library</div>`;
                 col.items.forEach(m => {
-                    const mDisplayName = m.alias || m.name;
                     const mCard = document.createElement('div');
                     mCard.className = 'manga-card';
                     const prog = localStorage.getItem(`progress_${m.path}`) || 0;
-                    
                     mCard.style.backgroundImage = `url('/render-manga?file=${encodeURIComponent(m.path)}&page=${prog}')`;
-                    mCard.innerHTML = `<div class="card-overlay"><h3>${mDisplayName}</h3></div>`;
-                    
-                    mCard.oncontextmenu = (e) => {
-                        e.preventDefault();
-                        openMangaRenameModal(mDisplayName, m.path);
-                    };
-                    
+                    mCard.innerHTML = `<div class="card-overlay"><h3>${m.name}</h3></div>`;
                     mCard.onclick = () => Reader.open(m.path, prog, false, col.path);
                     grid.appendChild(mCard);
                 });
             }
         };
-    
+
         const Reader = {
             state: { path: null, page: 0, parent: null },
-            
             open(path, page, isCol, parent) {
                 this.state = { path, page: parseInt(page), parent };
                 document.getElementById('ReaderOverlay').classList.add('active');
                 this.render();
             },
-            
             render() {
                 const img = document.getElementById('ReaderImg');
                 img.src = `/render-manga?file=${encodeURIComponent(this.state.path)}&page=${this.state.page}`;
                 document.getElementById('PageInfo').innerText = `PAGE ${this.state.page + 1}`;
                 localStorage.setItem(`progress_${this.state.path}`, this.state.page);
             },
-            
             next() { this.state.page++; this.render(); },
             prev() { if(this.state.page > 0) { this.state.page--; this.render(); } },
-            
-            close() { 
-                document.getElementById('ReaderOverlay').classList.remove('active'); 
-                CORE.init(); 
-            },
-            
+            close() { document.getElementById('ReaderOverlay').classList.remove('active'); CORE.init(); },
             async setAsCover() {
-                if(!this.state.parent) return alert("Open a volume within a collection to set the collection cover.");
+                if(!this.state.parent) return alert("Must be inside a collection to sync cover.");
                 await fetch('/api/collections/cover', {
                     method: 'PUT', headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ 
-                        collectionPath: this.state.parent, 
-                        coverFile: this.state.path, 
-                        coverPage: this.state.page 
-                    })
+                    body: JSON.stringify({ collectionPath: this.state.parent, coverFile: this.state.path, coverPage: this.state.page })
                 });
-                alert("Collection cover updated successfully.");
+                alert("Collection Header Synced.");
             }
         };
-    
-        // Reader Interaction: Single click (Next), Double click (Prev)
+
+        // Click Logic: Next vs Prev
         let clickTimer = null;
         document.getElementById('ReaderImg').onclick = () => {
             if (clickTimer == null) {
@@ -382,24 +342,20 @@
                 Reader.prev();
             }
         };
-    
-        // Keyboard controls
+
         window.onkeydown = (e) => {
             if(!document.getElementById('ReaderOverlay').classList.contains('active')) return;
             if(e.key === 'ArrowRight' || e.key === ' ') Reader.next();
             if(e.key === 'ArrowLeft') Reader.prev();
             if(e.key === 'Escape') Reader.close();
         };
-    
-        // --- MODAL & RENAMING LOGIC ---
-        function closeModal() { document.getElementById('Modal').style.display = 'none'; }
-    
-        // Logic for creating folders
+
+        // --- MODALS ---
         function openCreateModal() {
             const m = document.getElementById('Modal');
             m.style.display = 'flex';
             document.getElementById('ModalInput').value = "";
-            document.getElementById('ModalTitle').innerText = "Create New Collection";
+            document.getElementById('ModalTitle').innerText = "Create Collection";
             document.getElementById('ModalConfirm').onclick = async () => {
                 const name = document.getElementById('ModalInput').value;
                 if(!name) return;
@@ -410,8 +366,7 @@
                 closeModal(); CORE.init();
             };
         }
-    
-        // Logic for renaming folders (Collections)
+
         function openRenameModal(oldName, path) {
             const m = document.getElementById('Modal');
             m.style.display = 'flex';
@@ -427,33 +382,16 @@
                 closeModal(); CORE.init();
             };
         }
-    
-        // Logic for setting Display Aliases (Manga files)
-        function openMangaRenameModal(oldName, path) {
-            const m = document.getElementById('Modal');
-            m.style.display = 'flex';
-            document.getElementById('ModalInput').value = oldName;
-            document.getElementById('ModalTitle').innerText = "Set Display Name";
-            document.getElementById('ModalConfirm').onclick = async () => {
-                const newName = document.getElementById('ModalInput').value;
-                if(!newName) return;
-                await fetch('/api/manga/rename', {
-                    method: 'PUT', headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ path, newName })
-                });
-                closeModal(); CORE.init();
-            };
-        }
-    
-        // --- NOTES ENGINE ---
+
+        function closeModal() { document.getElementById('Modal').style.display = 'none'; }
+
+        // --- NOTES ---
         const Notes = {
-            state: { current: null, tout: null },
-    
             async load() {
                 const res = await fetch('/api/notes');
                 const list = await res.json();
                 const container = document.getElementById('NotesList');
-                container.innerHTML = '<h3 style="margin-top:0; color:var(--accent);">Documents</h3>';
+                container.innerHTML = '<h3 style="margin-top:0">Documents</h3>';
                 list.forEach(n => {
                     const d = document.createElement('div');
                     d.className = 'nav-item';
@@ -464,46 +402,36 @@
                     container.appendChild(d);
                 });
             },
-    
             async open(id) {
                 const res = await fetch(`/api/notes/${id}`);
                 const data = await res.json();
-                this.state.current = id;
-                const editor = document.getElementById('NoteEditor');
-                editor.value = data.content;
-                editor.oninput = () => {
-                    clearTimeout(this.state.tout);
-                    this.state.tout = setTimeout(() => this.save(), 1000);
+                this.current = id;
+                document.getElementById('NoteEditor').value = data.content;
+                document.getElementById('NoteEditor').oninput = () => {
+                    clearTimeout(this.tout);
+                    this.tout = setTimeout(() => this.save(), 1000);
                 }
             },
-    
             async save() {
-                if(!this.state.current) return;
+                if(!this.current) return;
                 await fetch('/api/notes', {
                     method: 'POST', headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ 
-                        title: this.state.current.replace('.txt', ''), 
-                        content: document.getElementById('NoteEditor').value 
-                    })
+                    body: JSON.stringify({ title: this.current.replace('.txt', ''), content: document.getElementById('NoteEditor').value })
                 });
             },
-    
             new() {
-                const title = prompt("Enter Page Title:");
+                const title = prompt("Page Title:");
                 if(title) {
-                    this.state.current = title + ".txt";
+                    this.current = title + ".txt";
                     document.getElementById('NoteEditor').value = "";
                     this.save().then(() => this.load());
                 }
             }
         };
-    
-        // Global Search listener
+
         document.getElementById('SearchInput').oninput = (e) => CORE.renderManga(e.target.value);
-    
-        // Initial Load
+
         CORE.init();
     </script>
-
 </body>
 </html>
