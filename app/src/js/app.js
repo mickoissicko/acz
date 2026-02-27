@@ -1,134 +1,103 @@
-const CORE = {
-    state: {
-        activeTab: 'mangas',
-        library: {},
-        notes: [],
-        currentManga: null,
-        currentPage: 0
-    },
+const UI = {
+    state: { library: null },
 
     async init() {
-        await this.loadLibrary();
-        this.bindEvents();
-        this.switchTab('mangas');
+        try {
+            const res = await fetch('/api/library');
+            this.state.library = await res.json();
+            this.setupTabs();
+            this.renderManga();
+            this.setupSearch();
+        } catch (err) {
+            console.error("Failed to load library:", err);
+        }
     },
 
-    async loadLibrary() {
-        const res = await fetch('/api/library');
-        this.state.library = await res.json();
-    },
+    setupTabs() {
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.onclick = () => {
+                const target = item.dataset.tab;
+                document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+                document.getElementById(target + 'View').classList.add('active');
+                
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
 
-    bindEvents() {
-        // Tab switching
-        document.querySelectorAll('.nav-tab').forEach(tab => {
-            tab.onclick = () => this.switchTab(tab.dataset.tab);
+                if (target === 'notes') Notes.load();
+            };
         });
-
-        // Keyboard Reader
-        window.onkeydown = (e) => {
-            if (document.getElementById('ReaderOverlay').style.display === 'flex') {
-                if (e.key === "ArrowRight") this.nextPage();
-                if (e.key === "ArrowLeft") this.prevPage();
-                if (e.key === "Escape") this.closeReader();
-            }
-        };
     },
 
-    switchTab(tabId) {
-        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-        
-        document.getElementById(`${tabId}View`).classList.add('active');
-        document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
-        
-        if (tabId === 'mangas') this.renderMangas(this.state.library);
-        if (tabId === 'notes') this.loadNotes();
-    },
-
-    // --- idk i stole all this lol ... so ya ---
-    renderMangas(data, isSub = false) {
+    renderManga(filter = "") {
         const grid = document.getElementById('MangaGrid');
-        grid.innerHTML = isSub ? `<div class="card" onclick="CORE.renderMangas(CORE.state.library)"><h3>← Back</h3></div>` : '';
+        grid.innerHTML = '';
 
-        Object.entries(data).forEach(([cat, items]) => {
-            const list = Array.isArray(items) ? items : [items];
-            list.forEach(item => {
-                const savedPage = localStorage.getItem(`progress_${item.path}`) || 0;
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
+        const all = [...this.state.library.collections, ...this.state.library.mangas];
+
+        all.forEach(item => {
+            if (filter && !item.name.toLowerCase().includes(filter.toLowerCase())) return;
+
+            const card = document.createElement('div');
+            card.className = 'manga-card';
+            
+            const progress = localStorage.getItem(`progress_${item.path}`) || 0;
+            const thumbUrl = item.meta?.coverFile ? item.meta.coverFile : item.path;
+            const coverPage = item.meta?.coverPage !== undefined ? item.meta.coverPage : progress;
+            
+            card.style.backgroundImage = `url('/render-manga?file=${encodeURIComponent(thumbUrl)}&page=${coverPage}')`;
+
+            card.innerHTML = `
+                <div class="card-info">
                     <h3>${item.name}</h3>
-                    <p style="font-size:12px; color:var(--text-dim)">${item.isCollection ? 'Collection' : 'Page ' + (parseInt(savedPage)+1)}</p>
-                    ${!item.isCollection ? `<div class="progress-bar" style="width: 100%"></div>` : ''}
-                `;
-                card.onclick = () => item.isCollection ? this.renderMangas(item.items, true) : this.openReader(item.path);
-                grid.appendChild(card);
-            });
+                    <small>${item.items ? item.items.length + ' Volumes' : 'Single Issue'}</small>
+                </div>
+            `;
+
+            // Drag and Drop support
+            if (!item.items) {
+                card.draggable = true;
+                card.ondragstart = (e) => e.dataTransfer.setData('source', item.path);
+            } else {
+                card.ondragover = (e) => e.preventDefault();
+                card.ondrop = async (e) => {
+                    const source = e.dataTransfer.getData('source');
+                    await fetch('/api/move', {
+                        method: 'PUT',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ source, targetDir: item.path })
+                    });
+                    this.init();
+                };
+            }
+
+            card.onclick = () => {
+                if (item.items) this.renderCollection(item);
+                else Reader.open(item.path, progress);
+            };
+            
+            grid.appendChild(card);
         });
     },
 
-    openReader(path) {
-        this.state.currentManga = path;
-        this.state.currentPage = parseInt(localStorage.getItem(`progress_${path}`)) || 0;
-        document.getElementById('ReaderOverlay').style.display = 'flex';
-        document.getElementById('TopBar').classList.add('collapsed');
-        this.updateReader();
-    },
-
-    updateReader() {
-        const img = document.getElementById('ReaderImg');
-        img.src = `/render-manga?file=${encodeURIComponent(this.state.currentManga)}&page=${this.state.currentPage}`;
-        document.getElementById('PageInfo').innerText = `Page ${this.state.currentPage + 1}`;
-        localStorage.setItem(`progress_${this.state.currentManga}`, this.state.currentPage);
-    },
-
-    nextPage() { this.state.currentPage++; this.updateReader(); },
-    prevPage() { if(this.state.currentPage > 0) { this.state.currentPage--; this.updateReader(); } },
-    closeReader() { 
-        document.getElementById('ReaderOverlay').style.display = 'none'; 
-        document.getElementById('TopBar').classList.remove('collapsed');
-        this.renderMangas(this.state.library); 
-    },
-
-    // --- for the notes thingy ---
-    async loadNotes() {
-        const res = await fetch('/api/notes');
-        const notes = await res.json();
-        const list = document.getElementById('NotesList');
-        list.innerHTML = `<button onclick="CORE.newNote()" class="card" style="width:100%; margin-bottom:10px;">+ New Note</button>`;
-        notes.forEach(n => {
-            const div = document.createElement('div');
-            div.className = 'note-item';
-            div.innerText = n.title;
-            div.onclick = () => this.openNote(n.id);
-            list.appendChild(div);
+    renderCollection(col) {
+        const grid = document.getElementById('MangaGrid');
+        grid.innerHTML = `<div class="back-btn" onclick="UI.renderManga()">← Back to Library</div>`;
+        col.items.forEach(m => {
+            const mCard = document.createElement('div');
+            mCard.className = 'manga-card';
+            const prog = localStorage.getItem(`progress_${m.path}`) || 0;
+            mCard.style.backgroundImage = `url('/render-manga?file=${encodeURIComponent(m.path)}&page=${prog}')`;
+            mCard.onclick = (e) => {
+                e.stopPropagation();
+                Reader.open(m.path, prog, false, col.path);
+            };
+            grid.appendChild(mCard);
         });
     },
 
-    async openNote(id) {
-        const res = await fetch(`/api/notes/${id}`);
-        const data = await res.json();
-        document.getElementById('NoteEditor').value = data.content;
-        document.getElementById('NoteEditor').dataset.currentTitle = id.replace('.txt', '');
-    },
-
-    async saveNote() {
-        const title = document.getElementById('NoteEditor').dataset.currentTitle || prompt("Note Title:");
-        const content = document.getElementById('NoteEditor').value;
-        if (!title) return;
-        await fetch('/api/notes', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ title, content })
-        });
-        this.loadNotes();
-    },
-
-    newNote() {
-        document.getElementById('NoteEditor').value = '';
-        document.getElementById('NoteEditor').dataset.currentTitle = '';
-        document.getElementById('NoteEditor').focus();
+    setupSearch() {
+        document.getElementById('SearchInput').oninput = (e) => this.renderManga(e.target.value);
     }
 };
 
-CORE.init();
+UI.init();

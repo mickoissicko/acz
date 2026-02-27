@@ -1,76 +1,210 @@
-const EXPRESS = require('express');
-const PATH = require('path');
-const FS = require('fs');
-const ADM_ZIP = require('adm-zip');
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+const admZip = require('adm-zip');
 
-const APP = EXPRESS();
+const app = express();
 const PORT = 3000;
-const NOTES_DIR = PATH.join(__dirname, 'notes');
+const CONFIG_PATH = path.join(__dirname, 'config.acz.mix');
 
-if (!FS.existsSync(NOTES_DIR)) FS.mkdirSync(NOTES_DIR);
+app.use(express.json());
+// Serve static files from the /src directory
+app.use(express.static(path.join(__dirname, 'src')));
 
-APP.use(EXPRESS.static(PATH.join(__dirname, 'src')));
-APP.use(EXPRESS.json());
+/**
+ * CONFIG PARSER
+ * Extracts paths from the .mix file
+ */
+function getPathFromConfig(section) {
+    if (!fs.existsSync(CONFIG_PATH)) return null;
+    const content = fs.readFileSync(CONFIG_PATH, 'utf-8');
+    const lines = content.split(/\r?\n/);
+    let currentSection = null;
 
-// --- MANGA API ---
-APP.get('/api/library', (Req, Res) => {
-    const CONFIG_PATH = PATH.join(__dirname, 'config.acz.mix');
-    if (!FS.existsSync(CONFIG_PATH)) return Res.json({});
-    const Raw = FS.readFileSync(CONFIG_PATH, 'utf-8');
-    let Library = {};
-    let CurrentSection = "GLOBAL";
+    for (let line of lines) {
+        line = line.trim();
+        if (line.startsWith('[') && line.endsWith(']')) {
+            currentSection = line.slice(1, -1);
+        } else if (currentSection === section && line.startsWith('Path:')) {
+            return line.split('Path:')[1].trim().replace(/^["']|["']$/g, "");
+        }
+    }
+    return null;
+}
 
-    Raw.split('\n').forEach(Line => {
-        let Clean = Line.trim();
-        if (!Clean || Clean.startsWith('#')) return;
-        if (Clean.startsWith('[') && Clean.endsWith(']')) {
-            CurrentSection = Clean.substring(1, Clean.length - 1);
-            Library[CurrentSection] = [];
-        } else if (Clean.includes(':')) {
-            let [Name, TargetPath] = Clean.split(':').map(s => s.trim().replace(/^["']|["']$/g, ""));
-            if (FS.existsSync(TargetPath) && FS.lstatSync(TargetPath).isDirectory()) {
-                let Files = FS.readdirSync(TargetPath).filter(f => f.match(/\.(zip|cbz)$/i))
-                    .map(f => ({ name: f.replace(/\.(zip|cbz)$/i, ""), path: PATH.join(TargetPath, f) }));
-                Library[CurrentSection].push({ name: Name, isCollection: true, items: Files });
-            } else {
-                Library[CurrentSection].push({ name: Name, isCollection: false, path: TargetPath });
-            }
+/**
+ * LIBRARY API
+ * Scans the Manga directory and filters out the Notes directory
+ */
+app.get('/api/library', (req, res) => {
+    const mangaPath = getPathFromConfig('MANGA');
+    const notesPath = getPathFromConfig('NOTES');
+
+    if (!mangaPath || !fs.existsSync(mangaPath)) {
+        return res.status(500).json({ error: "Manga path not found in config" });
+    }
+
+    // Identify the name of the notes folder to ignore it
+    const notesFolderName = notesPath ? path.basename(notesPath) : null;
+
+    const library = { collections: [], mangas: [] };
+    const items = fs.readdirSync(mangaPath);
+
+    items.forEach(item => {
+        // Ignore hidden files and the specific Notes folder
+        if (item.startsWith('.') || item === notesFolderName) return;
+
+        const fullPath = path.join(mangaPath, item);
+        const stat = fs.lstatSync(fullPath);
+
+        if (stat.isDirectory()) {
+            const metaPath = path.join(fullPath, 'meta.json');
+            const meta = fs.existsSync(metaPath) ? JSON.parse(fs.readFileSync(metaPath, 'utf-8')) : { color: '#7c4dff' };
+            
+            const files = fs.readdirSync(fullPath)
+                .filter(f => f.match(/\.(zip|cbz)$/i))
+                .map(f => ({ name: f.replace(/\.(zip|cbz)$/i, ""), path: path.join(fullPath, f) }));
+            
+            library.collections.push({ name: item, path: fullPath, items: files, meta });
+        } else if (item.match(/\.(zip|cbz)$/i)) {
+            library.mangas.push({ name: item.replace(/\.(zip|cbz)$/i, ""), path: fullPath });
         }
     });
-    Res.json(Library);
+
+    res.json(library);
 });
 
-APP.get('/render-manga', (Req, Res) => {
+/**
+ * MANGA RENDERING
+ * Extracts specific pages from Zip/CBZ on the fly
+ */
+app.get('/render-manga', (req, res) => {
+    const { file, page } = req.query;
+    if (!file) return res.status(400).send("No file specified");
+
     try {
-        let Zip = new ADM_ZIP(Req.query.file);
-        let Entries = Zip.getEntries().filter(e => !e.isDirectory && e.entryName.match(/\.(jpg|jpeg|png|webp|avif)$/i))
-            .sort((a, b) => a.entryName.localeCompare(b.entryName, undefined, {numeric: true}));
-        if (Entries[Req.query.page]) {
-            Res.contentType('image/jpeg');
-            Res.send(Entries[Req.query.page].getData());
-        } else { Res.status(404).send("End"); }
-    } catch (e) { Res.status(500).send("Err"); }
+        const zip = new admZip(file);
+        const entries = zip.getEntries()
+            .filter(e => !e.isDirectory && e.entryName.match(/\.(jpg|jpeg|png|webp|avif)$/i))
+            .sort((a, b) => a.entryName.localeCompare(b.entryName, undefined, { numeric: true }));
+
+        const index = parseInt(page) || 0;
+        if (entries[index]) {
+            res.contentType('image/jpeg');
+            res.send(entries[index].getData());
+        } else {
+            res.status(404).send("Page not found");
+        }
+    } catch (err) {
+        res.status(500).send("Error rendering page");
+    }
 });
 
-// --- NOTES API ---
-APP.get('/api/notes', (Req, Res) => {
-    let Files = FS.readdirSync(NOTES_DIR).map(f => ({ id: f, title: f.replace('.txt', '') }));
-    Res.json(Files);
+/**
+ * MOVE FILE (Drag & Drop)
+ */
+app.put('/api/move', (req, res) => {
+    const { source, targetDir } = req.body;
+    try {
+        const dest = path.join(targetDir, path.basename(source));
+        fs.renameSync(source, dest);
+        res.json({ success: true });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
-APP.get('/api/notes/:id', (Req, Res) => {
-    let Content = FS.readFileSync(PATH.join(NOTES_DIR, Req.params.id), 'utf-8');
-    Res.json({ content: Content });
+/**
+ * COLLECTION COVER PERSISTENCE
+ */
+app.put('/api/collections/cover', (req, res) => {
+    const { collectionPath, coverFile, coverPage } = req.body;
+    const metaPath = path.join(collectionPath, 'meta.json');
+    let meta = fs.existsSync(metaPath) ? JSON.parse(fs.readFileSync(metaPath)) : {};
+    
+    meta.coverFile = coverFile;
+    meta.coverPage = coverPage;
+    
+    fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2));
+    res.json({ success: true });
 });
 
-APP.post('/api/notes', (Req, Res) => {
-    let { title, content } = Req.body;
-    FS.writeFileSync(PATH.join(NOTES_DIR, `${title}.txt`), content);
-    Res.json({ success: true });
+/**
+ * NOTES API
+ */
+app.get('/api/notes', (req, res) => {
+    const notesPath = getPathFromConfig('NOTES');
+    if (!notesPath || !fs.existsSync(notesPath)) return res.json([]);
+    
+    const files = fs.readdirSync(notesPath)
+        .filter(f => f.endsWith('.txt'))
+        .map(f => ({ id: f, title: f.replace('.txt', '') }));
+    res.json(files);
 });
 
-APP.get('/', (Req, Res) => {
-    Res.sendFile(PATH.join(__dirname, 'src', 'index.html'));
+app.get('/api/notes/:id', (req, res) => {
+    const notesPath = getPathFromConfig('NOTES');
+    const fullPath = path.join(notesPath, req.params.id);
+    if (fs.existsSync(fullPath)) {
+        res.json({ content: fs.readFileSync(fullPath, 'utf-8') });
+    } else {
+        res.status(404).send("Note not found");
+    }
 });
 
-APP.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+app.post('/api/notes', (req, res) => {
+    const notesPath = getPathFromConfig('NOTES');
+    const { title, content } = req.body;
+    fs.writeFileSync(path.join(notesPath, `${title}.txt`), content);
+    res.json({ success: true });
+});
+
+/**
+ * ROOT ROUTE
+ */
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
+
+// CREATE COLLECTION
+app.post('/api/collections', (req, res) => {
+    const mangaPath = getPathFromConfig('MANGA');
+    const newDir = path.join(mangaPath, req.body.name);
+    if (!fs.existsSync(newDir)) {
+        fs.mkdirSync(newDir);
+        fs.writeFileSync(path.join(newDir, 'meta.json'), JSON.stringify({ color: '#00e5ff' }));
+    }
+    res.json({ success: true });
+});
+
+// RENAME COLLECTION
+app.put('/api/collections/rename', (req, res) => {
+    const { path: oldPath, newName } = req.body;
+    const parentDir = path.dirname(oldPath);
+    const newPath = path.join(parentDir, newName);
+    fs.renameSync(oldPath, newPath);
+    res.json({ success: true });
+});
+
+app.put('/api/manga/rename', (req, res) => {
+    const { path: mangaPath, newName } = req.body;
+    const parentDir = path.dirname(mangaPath);
+    const metaPath = path.join(parentDir, 'meta.json');
+    
+    let meta = {};
+    if (fs.existsSync(metaPath)) {
+        meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+    }
+
+    // alias w/ filename key
+    if (!meta.aliases) meta.aliases = {};
+    const fileName = path.basename(mangaPath);
+    meta.aliases[fileName] = newName;
+
+    fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2));
+    res.json({ success: true });
+});
+
+app.listen(PORT, () => {
+    console.log(`skibid`);
+});
