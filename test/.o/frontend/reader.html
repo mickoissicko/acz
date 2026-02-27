@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AnimeCloud Reader</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 min-h-screen">
+
+  <!-- Top bar -->
+  <div class="flex justify-between p-4 backdrop-blur-md bg-white/30 shadow-soft sticky top-0 z-50">
+    <button onclick="goBack()" class="soft-button">← Back</button>
+    <div>
+      <button onclick="prevPage()" class="soft-button">Prev</button>
+      <button onclick="nextPage()" class="soft-button">Next</button>
+    </div>
+  </div>
+
+  <!-- Image display -->
+  <div class="flex justify-center p-6">
+    <img id="readerImage" class="rounded-3xl shadow-2xl max-h-[85vh]">
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

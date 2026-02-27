@@ -1,0 +1,1 @@
+import{d as s,j as e,S as r,H as n,at as a}from"./index-4bec1d4c.js";function c(){const{t}=s();return e.jsxs(r,{children:[e.jsx(n,{children:e.jsxs("title",{children:["Stump | ",t("settingsScene.server/users.createUser.helmet")]})}),e.jsx(a,{})]})}export{c as default};

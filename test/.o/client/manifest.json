@@ -1,0 +1,1779 @@
+{
+  "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Bold-102.woff": {
+    "file": "assets/Atkinson-Hyperlegible-Bold-102-f0de8ccb.woff",
+    "src": "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Bold-102.woff"
+  },
+  "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Bold-102.woff2": {
+    "file": "assets/Atkinson-Hyperlegible-Bold-102-f0189dcb.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Bold-102.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Italic-102.woff": {
+    "file": "assets/Atkinson-Hyperlegible-Italic-102-a4866fde.woff",
+    "src": "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Italic-102.woff"
+  },
+  "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Italic-102.woff2": {
+    "file": "assets/Atkinson-Hyperlegible-Italic-102-a62205ae.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Italic-102.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Regular-102.woff": {
+    "file": "assets/Atkinson-Hyperlegible-Regular-102-b51d2e16.woff",
+    "src": "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Regular-102.woff"
+  },
+  "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Regular-102.woff2": {
+    "file": "assets/Atkinson-Hyperlegible-Regular-102-efe52c57.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/atkinson-hyperlegible/Atkinson-Hyperlegible-Regular-102.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-cyrillic-ext-italic.woff2": {
+    "file": "assets/Bitter-cyrillic-ext-italic-496bce85.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-cyrillic-ext-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-cyrillic-ext.woff2": {
+    "file": "assets/Bitter-cyrillic-ext-85a9bbc7.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-cyrillic-ext.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-cyrillic-italic.woff2": {
+    "file": "assets/Bitter-cyrillic-italic-65a940c7.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-cyrillic-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-cyrillic.woff2": {
+    "file": "assets/Bitter-cyrillic-78bbfc5a.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-cyrillic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-latin-ext-italic.woff2": {
+    "file": "assets/Bitter-latin-ext-italic-24136f4f.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-latin-ext-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-latin-ext.woff2": {
+    "file": "assets/Bitter-latin-ext-1c66fecf.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-latin-ext.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-latin-italic.woff2": {
+    "file": "assets/Bitter-latin-italic-993536f5.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-latin-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-latin.woff2": {
+    "file": "assets/Bitter-latin-9e451c93.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-latin.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-vietnamese-italic.woff2": {
+    "file": "assets/Bitter-vietnamese-italic-a5997e8e.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-vietnamese-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/bitter/Bitter-vietnamese.woff2": {
+    "file": "assets/Bitter-vietnamese-f788a259.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/bitter/Bitter-vietnamese.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Bold.woff": {
+    "file": "assets/CharisSIL-Bold-26e48685.woff",
+    "src": "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Bold.woff"
+  },
+  "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Bold.woff2": {
+    "file": "assets/CharisSIL-Bold-e69f0ca6.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Bold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/charis/CharisSIL-BoldItalic.woff": {
+    "file": "assets/CharisSIL-BoldItalic-b73c43df.woff",
+    "src": "../../../packages/browser/public/assets/fonts/charis/CharisSIL-BoldItalic.woff"
+  },
+  "../../../packages/browser/public/assets/fonts/charis/CharisSIL-BoldItalic.woff2": {
+    "file": "assets/CharisSIL-BoldItalic-43b29031.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/charis/CharisSIL-BoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Italic.woff": {
+    "file": "assets/CharisSIL-Italic-ada19776.woff",
+    "src": "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Italic.woff"
+  },
+  "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Italic.woff2": {
+    "file": "assets/CharisSIL-Italic-2ed5fdeb.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Regular.woff": {
+    "file": "assets/CharisSIL-Regular-4c8410c2.woff",
+    "src": "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Regular.woff"
+  },
+  "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Regular.woff2": {
+    "file": "assets/CharisSIL-Regular-9e15f73f.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/charis/CharisSIL-Regular.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-Black.woff2": {
+    "file": "assets/Inter-Black-aa867fe6.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-Black.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-BlackItalic.woff2": {
+    "file": "assets/Inter-BlackItalic-4b50bf83.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-BlackItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-Bold.woff2": {
+    "file": "assets/Inter-Bold-22097670.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-Bold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-BoldItalic.woff2": {
+    "file": "assets/Inter-BoldItalic-af46bd58.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-BoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-ExtraBold.woff2": {
+    "file": "assets/Inter-ExtraBold-98023dd7.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-ExtraBold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-ExtraBoldItalic.woff2": {
+    "file": "assets/Inter-ExtraBoldItalic-fe47bb9a.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-ExtraBoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-ExtraLight.woff2": {
+    "file": "assets/Inter-ExtraLight-b6c261b8.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-ExtraLight.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-ExtraLightItalic.woff2": {
+    "file": "assets/Inter-ExtraLightItalic-47608eb3.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-ExtraLightItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-Italic.woff2": {
+    "file": "assets/Inter-Italic-708b7baa.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-Italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-Light.woff2": {
+    "file": "assets/Inter-Light-d12f4645.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-Light.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-LightItalic.woff2": {
+    "file": "assets/Inter-LightItalic-72319cf2.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-LightItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-Medium.woff2": {
+    "file": "assets/Inter-Medium-8458f8af.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-Medium.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-MediumItalic.woff2": {
+    "file": "assets/Inter-MediumItalic-9f4481b0.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-MediumItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-Regular.woff2": {
+    "file": "assets/Inter-Regular-b6f9db9e.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-Regular.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-SemiBold.woff2": {
+    "file": "assets/Inter-SemiBold-8e52a861.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-SemiBold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-SemiBoldItalic.woff2": {
+    "file": "assets/Inter-SemiBoldItalic-8789e3e4.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-SemiBoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-Thin.woff2": {
+    "file": "assets/Inter-Thin-2ab12bc9.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-Thin.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/Inter-ThinItalic.woff2": {
+    "file": "assets/Inter-ThinItalic-e5555942.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/Inter-ThinItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Black.woff2": {
+    "file": "assets/InterDisplay-Black-b657e10e.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Black.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-BlackItalic.woff2": {
+    "file": "assets/InterDisplay-BlackItalic-fcf5f620.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-BlackItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Bold.woff2": {
+    "file": "assets/InterDisplay-Bold-1c2fea93.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Bold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-BoldItalic.woff2": {
+    "file": "assets/InterDisplay-BoldItalic-464a1e6d.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-BoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ExtraBold.woff2": {
+    "file": "assets/InterDisplay-ExtraBold-73c965c9.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ExtraBold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ExtraBoldItalic.woff2": {
+    "file": "assets/InterDisplay-ExtraBoldItalic-5dc7c1fd.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ExtraBoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ExtraLight.woff2": {
+    "file": "assets/InterDisplay-ExtraLight-cd4fbf33.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ExtraLight.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ExtraLightItalic.woff2": {
+    "file": "assets/InterDisplay-ExtraLightItalic-e102b9ac.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ExtraLightItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Italic.woff2": {
+    "file": "assets/InterDisplay-Italic-5ffc79b8.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Light.woff2": {
+    "file": "assets/InterDisplay-Light-f278fa13.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Light.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-LightItalic.woff2": {
+    "file": "assets/InterDisplay-LightItalic-9f3d68e6.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-LightItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Medium.woff2": {
+    "file": "assets/InterDisplay-Medium-da36cb98.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Medium.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-MediumItalic.woff2": {
+    "file": "assets/InterDisplay-MediumItalic-8ad57b6b.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-MediumItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Regular.woff2": {
+    "file": "assets/InterDisplay-Regular-0b4b8d6f.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Regular.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-SemiBold.woff2": {
+    "file": "assets/InterDisplay-SemiBold-a14bec46.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-SemiBold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-SemiBoldItalic.woff2": {
+    "file": "assets/InterDisplay-SemiBoldItalic-7ff3913f.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-SemiBoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Thin.woff2": {
+    "file": "assets/InterDisplay-Thin-14b2dbbc.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-Thin.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ThinItalic.woff2": {
+    "file": "assets/InterDisplay-ThinItalic-dd979951.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterDisplay-ThinItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterVariable-Italic.woff2": {
+    "file": "assets/InterVariable-Italic-0470791f.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterVariable-Italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/inter/InterVariable.woff2": {
+    "file": "assets/InterVariable-8af7bd5b.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/inter/InterVariable.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-bold.woff2": {
+    "file": "assets/Libre-Baskerville-latin-bold-546db554.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-bold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-ext-bold.woff2": {
+    "file": "assets/Libre-Baskerville-latin-ext-bold-0dd85d6c.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-ext-bold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-ext-italic.woff2": {
+    "file": "assets/Libre-Baskerville-latin-ext-italic-2a1799b5.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-ext-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-ext.woff2": {
+    "file": "assets/Libre-Baskerville-latin-ext-3392b5e0.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-ext.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-italic.woff2": {
+    "file": "assets/Libre-Baskerville-latin-italic-af54ff2c.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin.woff2": {
+    "file": "assets/Libre-Baskerville-latin-dbcc0e48.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/libre-baskerville/Libre-Baskerville-latin.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-Bold.woff2": {
+    "file": "assets/Literata-Bold-dace38d7.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-Bold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-BoldItalic.woff2": {
+    "file": "assets/Literata-BoldItalic-bb97edee.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-BoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-ExtraBold.woff2": {
+    "file": "assets/Literata-ExtraBold-8111a26b.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-ExtraBold.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-ExtraBoldItalic.woff2": {
+    "file": "assets/Literata-ExtraBoldItalic-6cda8aab.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-ExtraBoldItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-ExtraLight.woff2": {
+    "file": "assets/Literata-ExtraLight-d76370e0.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-ExtraLight.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-ExtraLightItalic.woff2": {
+    "file": "assets/Literata-ExtraLightItalic-efb05c5e.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-ExtraLightItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-Italic.woff2": {
+    "file": "assets/Literata-Italic-b634bb32.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-Italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-Light.woff2": {
+    "file": "assets/Literata-Light-d41a9e4c.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-Light.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-LightItalic.woff2": {
+    "file": "assets/Literata-LightItalic-2df7e665.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-LightItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-Medium.woff2": {
+    "file": "assets/Literata-Medium-f65d6e23.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-Medium.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-MediumItalic.woff2": {
+    "file": "assets/Literata-MediumItalic-525baa62.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-MediumItalic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/literata/Literata-Regular.woff2": {
+    "file": "assets/Literata-Regular-94f47c83.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/literata/Literata-Regular.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-cyrillic-ext-italic.woff2": {
+    "file": "assets/Nunito-cyrillic-ext-italic-a3e536c6.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-cyrillic-ext-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-cyrillic-ext.woff2": {
+    "file": "assets/Nunito-cyrillic-ext-82fcd913.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-cyrillic-ext.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-cyrillic-italic.woff2": {
+    "file": "assets/Nunito-cyrillic-italic-94222a82.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-cyrillic-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-cyrillic.woff2": {
+    "file": "assets/Nunito-cyrillic-cf6e8088.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-cyrillic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-latin-ext-italic.woff2": {
+    "file": "assets/Nunito-latin-ext-italic-b531cc2e.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-latin-ext-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-latin-ext.woff2": {
+    "file": "assets/Nunito-latin-ext-8f81887b.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-latin-ext.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-latin-italic.woff2": {
+    "file": "assets/Nunito-latin-italic-d5618515.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-latin-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-latin.woff2": {
+    "file": "assets/Nunito-latin-dd1d87a3.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-latin.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-vietnamese-italic.woff2": {
+    "file": "assets/Nunito-vietnamese-italic-cb0dc02c.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-vietnamese-italic.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/nunito/Nunito-vietnamese.woff2": {
+    "file": "assets/Nunito-vietnamese-d2b38335.woff2",
+    "src": "../../../packages/browser/public/assets/fonts/nunito/Nunito-vietnamese.woff2"
+  },
+  "../../../packages/browser/public/assets/fonts/opendyslexic/OpenDyslexic-Regular.woff": {
+    "file": "assets/OpenDyslexic-Regular-2282dbd6.woff",
+    "src": "../../../packages/browser/public/assets/fonts/opendyslexic/OpenDyslexic-Regular.woff"
+  },
+  "../../../packages/browser/public/assets/fonts/opendyslexic/svg/OpenDyslexic-Regular.svg": {
+    "file": "assets/OpenDyslexic-Regular-27f2cdc7.svg",
+    "src": "../../../packages/browser/public/assets/fonts/opendyslexic/svg/OpenDyslexic-Regular.svg"
+  },
+  "../../../packages/browser/src/scenes/auth/index.ts": {
+    "file": "assets/index-7a98ee68.js",
+    "imports": [
+      "index.html",
+      "_ConfiguredServersList-e0fb1c5c.js",
+      "_form-87d316e1.js",
+      "_settings-2-fbc58822.js",
+      "_trash-2-fbf044f3.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/auth/index.ts"
+  },
+  "../../../packages/browser/src/scenes/book/BookOverviewScene.tsx": {
+    "file": "assets/BookOverviewScene-3e7b6bd6.js",
+    "imports": [
+      "index.html",
+      "__setToString-bdfecbb7.js",
+      "_toString-ca8e7984.js",
+      "__baseGet-2d7ec73c.js",
+      "__baseIteratee-acd0c410.js",
+      "__getTag-6090c7bb.js",
+      "_identity-66bf3aad.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "__MapCache-33112411.js",
+      "_BookCard-1e8e6fd8.js",
+      "_patterns-7ebcac83.js",
+      "_HorizontalCardList-9bda4f09.js",
+      "_emailers-e517b8a3.js",
+      "_hasIn-2573f2bd.js",
+      "__baseIsEqual-6a83cae7.js",
+      "_get-a499a417.js",
+      "_index-4669da61.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/book/BookOverviewScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/book/reader/BookReaderScene.tsx": {
+    "file": "assets/BookReaderScene-9ce3a591.js",
+    "imports": [
+      "index.html",
+      "_usePrevious-4befd47c.js",
+      "_index-4669da61.js",
+      "_useBookPreferences-8bd28592.js",
+      "_toString-ca8e7984.js",
+      "__getTag-6090c7bb.js",
+      "__flatRest-b95a9609.js",
+      "__MapCache-33112411.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "__baseGet-2d7ec73c.js",
+      "__baseSlice-35988e44.js",
+      "_settings-2-fbc58822.js",
+      "_patterns-7ebcac83.js",
+      "__setToString-bdfecbb7.js",
+      "_identity-66bf3aad.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/book/reader/BookReaderScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/book/reader/EpubReaderScene.tsx": {
+    "file": "assets/EpubReaderScene-4df6b24b.js",
+    "imports": [
+      "index.html",
+      "__MapCache-33112411.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "_toString-ca8e7984.js",
+      "_uniqBy-bda451ec.js",
+      "_useBookPreferences-8bd28592.js",
+      "_FontSelect-a5cf8581.js",
+      "_GenericEmptyState-1de232de.js",
+      "__baseIteratee-acd0c410.js",
+      "_hasIn-2573f2bd.js",
+      "__getTag-6090c7bb.js",
+      "__baseIsEqual-6a83cae7.js",
+      "__baseGet-2d7ec73c.js",
+      "_get-a499a417.js",
+      "_identity-66bf3aad.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/book/reader/EpubReaderScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/book/reader/PDFReaderScene.tsx": {
+    "file": "assets/PDFReaderScene-59338f84.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/book/reader/PDFReaderScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/book/settings/BookManagementScene.tsx": {
+    "file": "assets/BookManagementScene-9b6dde0b.js",
+    "imports": [
+      "index.html",
+      "_BookPageGrid-d521286a.js",
+      "_construction-e8dd7010.js",
+      "_index-844f9b66.js",
+      "_index-8dbf803c.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/book/settings/BookManagementScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/bookClub/UserBookClubsScene.tsx": {
+    "file": "assets/UserBookClubsScene-52b941c7.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/UserBookClubsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/bookClub/createClub/index.ts": {
+    "file": "assets/index-ed468d9e.js",
+    "imports": [
+      "index.html",
+      "_schema-178ade57.js",
+      "_context-64a61e55.js",
+      "_SteppedFormSceneHeader-40958543.js",
+      "_ReviewStepContainer-14afd98e.js",
+      "_form-87d316e1.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/createClub/index.ts"
+  },
+  "../../../packages/browser/src/scenes/bookClub/explore/BookClubExploreScene.tsx": {
+    "file": "assets/BookClubExploreScene-e0c0b1ea.js",
+    "imports": [
+      "index.html",
+      "_GenericEmptyState-1de232de.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/explore/BookClubExploreScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/bookClub/tabs/discussion/index.ts": {
+    "file": "assets/index-0cbe4a3b.js",
+    "imports": [
+      "index.html",
+      "_GenericEmptyState-1de232de.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/tabs/discussion/index.ts"
+  },
+  "../../../packages/browser/src/scenes/bookClub/tabs/home/index.ts": {
+    "file": "assets/index-99c4c01a.js",
+    "imports": [
+      "index.html",
+      "_BookClubSchedule-b857c0b7.js",
+      "_GenericEmptyState-1de232de.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/tabs/home/index.ts"
+  },
+  "../../../packages/browser/src/scenes/bookClub/tabs/members/index.ts": {
+    "file": "assets/index-1fc62831.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/tabs/members/index.ts"
+  },
+  "../../../packages/browser/src/scenes/bookClub/tabs/settings/basics/index.ts": {
+    "file": "assets/index-4102cfa4.js",
+    "imports": [
+      "index.html",
+      "_schema-178ade57.js",
+      "_form-87d316e1.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/tabs/settings/basics/index.ts"
+  },
+  "../../../packages/browser/src/scenes/bookClub/tabs/settings/danger/index.ts": {
+    "file": "assets/index-b764e52f.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/tabs/settings/danger/index.ts"
+  },
+  "../../../packages/browser/src/scenes/bookClub/tabs/settings/members/index.ts": {
+    "file": "assets/index-828763bb.js",
+    "imports": [
+      "index.html",
+      "__baseSlice-35988e44.js",
+      "_toString-ca8e7984.js",
+      "_isObjectLike-7cf1d8a5.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/tabs/settings/members/index.ts"
+  },
+  "../../../packages/browser/src/scenes/bookClub/tabs/settings/scheduler/index.ts": {
+    "file": "assets/index-5c23e6f3.js",
+    "imports": [
+      "index.html",
+      "_BookClubSchedule-b857c0b7.js",
+      "_DatePicker-492430a5.js",
+      "_FilterProvider-4557e2d5.js",
+      "_usePreviousIsDifferent-28e9a2af.js",
+      "_useIsInView-2f3406e1.js",
+      "_filter-6a302110.js",
+      "_Search-5d0171ee.js",
+      "_BookGrid-d1e5a584.js",
+      "_GenericEmptyState-1de232de.js",
+      "_usePrevious-4befd47c.js",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_BookCard-1e8e6fd8.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookClub/tabs/settings/scheduler/index.ts"
+  },
+  "../../../packages/browser/src/scenes/bookSearch/BookSearchScene.tsx": {
+    "file": "assets/BookSearchScene-a33ff84a.js",
+    "imports": [
+      "index.html",
+      "_usePrevious-4befd47c.js",
+      "_usePreviousIsDifferent-28e9a2af.js",
+      "_EntityTableColumnConfiguration-433528d9.js",
+      "_BookGrid-d1e5a584.js",
+      "_TableOrGridLayout-85176fa3.js",
+      "_useIsInView-2f3406e1.js",
+      "_GenericEmptyState-1de232de.js",
+      "_BookCard-1e8e6fd8.js",
+      "_SortIcon-87e651c4.js",
+      "_Search-5d0171ee.js",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_table-3cc00b26.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/bookSearch/BookSearchScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/createLibrary/index.ts": {
+    "file": "assets/index-bfe9e3d3.js",
+    "imports": [
+      "index.html",
+      "_context-64a61e55.js",
+      "_SteppedFormSceneHeader-40958543.js",
+      "_DirectoryPickerModal-99278e91.js",
+      "_ScannerOptInFeatures-91efb3fa.js",
+      "_WideSwitch-d0cfc2b9.js",
+      "_ThumbnailConfig-3f641d08.js",
+      "_folder-0808e64d.js",
+      "_index-4669da61.js",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_lock-c5352ec9.js",
+      "_square-pen-e8a93391.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/createLibrary/index.ts"
+  },
+  "../../../packages/browser/src/scenes/createSmartList/CreateSmartListScene.tsx": {
+    "file": "assets/CreateSmartListScene-0595ff1d.js",
+    "imports": [
+      "index.html",
+      "_context-64a61e55.js",
+      "_SteppedFormSceneHeader-40958543.js",
+      "_schema-0ef9650f.js",
+      "_SmartListQueryBuilder-202e889c.js",
+      "_AccessSettings-9517ca7b.js",
+      "_BasicDetails-4c7dcb5a.js",
+      "_ReviewStepContainer-14afd98e.js",
+      "_Preformatted-da91132d.js",
+      "_get-a499a417.js",
+      "__baseGet-2d7ec73c.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "_toString-ca8e7984.js",
+      "__MapCache-33112411.js",
+      "_DatePicker-492430a5.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/createSmartList/CreateSmartListScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/error/FourOhFour.tsx": {
+    "file": "assets/FourOhFour-a4fbbbf3.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/error/FourOhFour.tsx"
+  },
+  "../../../packages/browser/src/scenes/error/ServerConnectionErrorScene.tsx": {
+    "file": "assets/ServerConnectionErrorScene-71d5a7e5.js",
+    "imports": [
+      "index.html",
+      "_ConfiguredServersList-e0fb1c5c.js",
+      "_form-87d316e1.js",
+      "_settings-2-fbc58822.js",
+      "_trash-2-fbf044f3.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/error/ServerConnectionErrorScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/home/index.ts": {
+    "file": "assets/index-39ac0910.js",
+    "imports": [
+      "index.html",
+      "_BookCard-1e8e6fd8.js",
+      "_HorizontalCardList-9bda4f09.js",
+      "_SeriesCard-a0e252bb.js",
+      "_index-4669da61.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/home/index.ts"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/books/LibraryBooksScene.tsx": {
+    "file": "assets/LibraryBooksScene-b50bd1b3.js",
+    "imports": [
+      "index.html",
+      "_usePreviousIsDifferent-28e9a2af.js",
+      "_EntityTableColumnConfiguration-433528d9.js",
+      "_BookGrid-d1e5a584.js",
+      "_TableOrGridLayout-85176fa3.js",
+      "_useIsInView-2f3406e1.js",
+      "_usePrevious-4befd47c.js",
+      "_GenericEmptyState-1de232de.js",
+      "_BookCard-1e8e6fd8.js",
+      "_SortIcon-87e651c4.js",
+      "_Search-5d0171ee.js",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_table-3cc00b26.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/books/LibraryBooksScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/files/LibraryExplorerScene.tsx": {
+    "file": "assets/LibraryExplorerScene-b1e4fe8e.js",
+    "imports": [
+      "index.html",
+      "_FileExplorerProvider-1cc44cca.js",
+      "_GenericEmptyState-1de232de.js",
+      "_index-4669da61.js",
+      "_folder-0808e64d.js",
+      "_SortIcon-87e651c4.js",
+      "_table-3cc00b26.js",
+      "_index-844f9b66.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/files/LibraryExplorerScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/series/LibrarySeriesScene.tsx": {
+    "file": "assets/LibrarySeriesScene-4619bac8.js",
+    "imports": [
+      "index.html",
+      "_usePrevious-4befd47c.js",
+      "_usePreviousIsDifferent-28e9a2af.js",
+      "_TableOrGridLayout-85176fa3.js",
+      "_FilterProvider-4557e2d5.js",
+      "_GenericEmptyState-1de232de.js",
+      "_SeriesCard-a0e252bb.js",
+      "_useIsInView-2f3406e1.js",
+      "_SortIcon-87e651c4.js",
+      "_Search-5d0171ee.js",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_table-3cc00b26.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/series/LibrarySeriesScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/settings/basics/BasicSettingsScene.tsx": {
+    "file": "assets/BasicSettingsScene-d31fe6e9.js",
+    "imports": [
+      "index.html",
+      "_DirectoryPickerModal-99278e91.js",
+      "_folder-0808e64d.js",
+      "_index-4669da61.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/settings/basics/BasicSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/settings/danger/accessControl/index.ts": {
+    "file": "assets/index-7ba9a9cf.js",
+    "imports": [
+      "index.html",
+      "_usePrevious-4befd47c.js",
+      "_useDebouncedValue-d7cdedcb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/settings/danger/accessControl/index.ts"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/settings/danger/deletion/index.ts": {
+    "file": "assets/index-229d026b.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/settings/danger/deletion/index.ts"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/settings/index.ts": {
+    "file": "assets/index-368bbe7c.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/settings/index.ts"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/settings/options/analysis/index.ts": {
+    "file": "assets/index-66be4e49.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/settings/options/analysis/index.ts"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/settings/options/readingDefaults/index.ts": {
+    "file": "assets/index-16c6c79b.js",
+    "imports": [
+      "index.html",
+      "_useDebouncedValue-d7cdedcb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/settings/options/readingDefaults/index.ts"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/settings/options/scanner/index.ts": {
+    "file": "assets/index-6b59fd73.js",
+    "imports": [
+      "index.html",
+      "_ScannerOptInFeatures-91efb3fa.js",
+      "_WideSwitch-d0cfc2b9.js",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_lock-c5352ec9.js",
+      "_square-pen-e8a93391.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/settings/options/scanner/index.ts"
+  },
+  "../../../packages/browser/src/scenes/library/tabs/settings/options/thumbnails/ThumbnailSettingsScene.tsx": {
+    "file": "assets/ThumbnailSettingsScene-165e1fbb.js",
+    "imports": [
+      "index.html",
+      "_ThumbnailConfig-3f641d08.js",
+      "_BookPageGrid-d521286a.js",
+      "_SeriesBookGrid-3aee2a5c.js",
+      "_index-8dbf803c.js",
+      "_WideSwitch-d0cfc2b9.js",
+      "_index-844f9b66.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/library/tabs/settings/options/thumbnails/ThumbnailSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/librarySearch/index.ts": {
+    "file": "assets/index-39085905.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/librarySearch/index.ts"
+  },
+  "../../../packages/browser/src/scenes/onboarding/OnBoardingScene.tsx": {
+    "file": "assets/OnBoardingScene-980dac38.js",
+    "imports": [
+      "index.html",
+      "_ConfiguredServersList-e0fb1c5c.js",
+      "_form-87d316e1.js",
+      "_settings-2-fbc58822.js",
+      "_trash-2-fbf044f3.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/onboarding/OnBoardingScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/series/tabs/books/SeriesBooksScene.tsx": {
+    "file": "assets/SeriesBooksScene-71dfccf3.js",
+    "imports": [
+      "index.html",
+      "_usePrevious-4befd47c.js",
+      "_usePreviousIsDifferent-28e9a2af.js",
+      "_EntityTableColumnConfiguration-433528d9.js",
+      "_BookGrid-d1e5a584.js",
+      "_TableOrGridLayout-85176fa3.js",
+      "_useIsInView-2f3406e1.js",
+      "_GenericEmptyState-1de232de.js",
+      "_BookCard-1e8e6fd8.js",
+      "_SortIcon-87e651c4.js",
+      "_Search-5d0171ee.js",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_table-3cc00b26.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/series/tabs/books/SeriesBooksScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/series/tabs/files/SeriesExplorerScene.tsx": {
+    "file": "assets/SeriesExplorerScene-5b0261f3.js",
+    "imports": [
+      "index.html",
+      "_FileExplorerProvider-1cc44cca.js",
+      "_GenericEmptyState-1de232de.js",
+      "_index-4669da61.js",
+      "_folder-0808e64d.js",
+      "_SortIcon-87e651c4.js",
+      "_table-3cc00b26.js",
+      "_index-844f9b66.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/series/tabs/files/SeriesExplorerScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/series/tabs/settings/SeriesSettingsScene.tsx": {
+    "file": "assets/SeriesSettingsScene-0991663b.js",
+    "imports": [
+      "index.html",
+      "_BookPageGrid-d521286a.js",
+      "_SeriesBookGrid-3aee2a5c.js",
+      "_construction-e8dd7010.js",
+      "_index-844f9b66.js",
+      "_index-8dbf803c.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/series/tabs/settings/SeriesSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/seriesSearch/index.ts": {
+    "file": "assets/index-8e706e85.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/seriesSearch/index.ts"
+  },
+  "../../../packages/browser/src/scenes/settings/app/apiKeys/index.ts": {
+    "file": "assets/index-2856a284.js",
+    "imports": [
+      "index.html",
+      "_sparkles-ea167c2b.js",
+      "_DatePicker-492430a5.js",
+      "_copy-98e78aa3.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/app/apiKeys/index.ts"
+  },
+  "../../../packages/browser/src/scenes/settings/app/appearance/AppearanceSettingsScene.tsx": {
+    "file": "assets/AppearanceSettingsScene-ca16105a.js",
+    "imports": [
+      "index.html",
+      "_WideSwitch-d0cfc2b9.js",
+      "_FontSelect-a5cf8581.js",
+      "__baseIsEqual-6a83cae7.js",
+      "_lock-c5352ec9.js",
+      "__getTag-6090c7bb.js",
+      "__MapCache-33112411.js",
+      "_isObjectLike-7cf1d8a5.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/app/appearance/AppearanceSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/app/desktop/index.ts": {
+    "file": "assets/index-f811eb46.js",
+    "imports": [
+      "index.html",
+      "_ConfiguredServersList-e0fb1c5c.js",
+      "_WideSwitch-d0cfc2b9.js",
+      "_form-87d316e1.js",
+      "_settings-2-fbc58822.js",
+      "_trash-2-fbf044f3.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/app/desktop/index.ts"
+  },
+  "../../../packages/browser/src/scenes/settings/app/general/GeneralSettingsScene.tsx": {
+    "file": "assets/GeneralSettingsScene-e76d5036.js",
+    "imports": [
+      "index.html",
+      "_square-pen-e8a93391.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/app/general/GeneralSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/app/reader/ReaderDefaultSettingsScene.tsx": {
+    "file": "assets/ReaderDefaultSettingsScene-40dd3e5b.js",
+    "imports": [
+      "index.html",
+      "_FontSelect-a5cf8581.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/app/reader/ReaderDefaultSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/server/email/CreateEmailerScene.tsx": {
+    "file": "assets/CreateEmailerScene-e4c7744d.js",
+    "imports": [
+      "index.html",
+      "_emailers-e517b8a3.js",
+      "_CreateOrUpdateEmailerForm-3b5ca046.js",
+      "_EmailerSendHistory-5f8d1bbe.js",
+      "_form-87d316e1.js",
+      "_GenericEmptyState-1de232de.js",
+      "_SortIcon-87e651c4.js",
+      "_copy-98e78aa3.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/server/email/CreateEmailerScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/server/email/EditEmailerScene.tsx": {
+    "file": "assets/EditEmailerScene-79a551e1.js",
+    "imports": [
+      "index.html",
+      "_emailers-e517b8a3.js",
+      "_CreateOrUpdateEmailerForm-3b5ca046.js",
+      "_EmailerSendHistory-5f8d1bbe.js",
+      "_form-87d316e1.js",
+      "_GenericEmptyState-1de232de.js",
+      "_SortIcon-87e651c4.js",
+      "_copy-98e78aa3.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/server/email/EditEmailerScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/server/email/EmailSettingsScene.tsx": {
+    "file": "assets/EmailSettingsScene-49eb9fbb.js",
+    "imports": [
+      "index.html",
+      "_emailers-e517b8a3.js",
+      "_square-pen-e8a93391.js",
+      "_trash-2-fbf044f3.js",
+      "_ellipsis-vertical-e010f8cd.js",
+      "_EmailerSendHistory-5f8d1bbe.js",
+      "_sparkles-ea167c2b.js",
+      "_GenericEmptyState-1de232de.js",
+      "_SortIcon-87e651c4.js",
+      "_copy-98e78aa3.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/server/email/EmailSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/server/general/GeneralServerSettingsScene.tsx": {
+    "file": "assets/GeneralServerSettingsScene-e4d2282b.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/server/general/GeneralServerSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/server/jobs/JobSettingsScene.tsx": {
+    "file": "assets/JobSettingsScene-6e83b6ba.js",
+    "imports": [
+      "index.html",
+      "_construction-e8dd7010.js",
+      "_trash-2-fbf044f3.js",
+      "_ellipsis-vertical-e010f8cd.js",
+      "_usePrevious-4befd47c.js",
+      "_Preformatted-da91132d.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/server/jobs/JobSettingsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/server/logs/ServerLogsScene.tsx": {
+    "file": "assets/ServerLogsScene-2a84d3aa.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/server/logs/ServerLogsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/server/users/UsersScene.tsx": {
+    "file": "assets/UsersScene-d6e27310.js",
+    "imports": [
+      "index.html",
+      "_Preformatted-da91132d.js",
+      "_lock-c5352ec9.js",
+      "_ellipsis-vertical-e010f8cd.js",
+      "_uniqBy-bda451ec.js",
+      "__baseIteratee-acd0c410.js",
+      "_hasIn-2573f2bd.js",
+      "__getTag-6090c7bb.js",
+      "__MapCache-33112411.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "__baseIsEqual-6a83cae7.js",
+      "__baseGet-2d7ec73c.js",
+      "_toString-ca8e7984.js",
+      "_get-a499a417.js",
+      "_identity-66bf3aad.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/server/users/UsersScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/settings/server/users/create-or-update/CreateUserScene.tsx": {
+    "file": "assets/CreateUserScene-5e9405b0.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/settings/server/users/create-or-update/CreateUserScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/smartList/UserSmartListsScene.tsx": {
+    "file": "assets/UserSmartListsScene-b30f1620.js",
+    "imports": [
+      "index.html",
+      "_usePreviousIsDifferent-28e9a2af.js",
+      "_GenericEmptyState-1de232de.js",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_usePrevious-4befd47c.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/smartList/UserSmartListsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/smartList/items/UserSmartListItemsScene.tsx": {
+    "file": "assets/UserSmartListItemsScene-c68a73d8.js",
+    "imports": [
+      "index.html",
+      "_index-8dbf803c.js",
+      "_SortIcon-87e651c4.js",
+      "_Search-5d0171ee.js",
+      "_Preformatted-da91132d.js",
+      "_filter-6a302110.js",
+      "_construction-e8dd7010.js",
+      "_usePreviousIsDifferent-28e9a2af.js",
+      "_usePrevious-4befd47c.js",
+      "_useDebouncedValue-d7cdedcb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/smartList/items/UserSmartListItemsScene.tsx"
+  },
+  "../../../packages/browser/src/scenes/smartList/settings/access/index.ts": {
+    "file": "assets/index-498907b9.js",
+    "imports": [
+      "index.html",
+      "_schema-0ef9650f.js",
+      "_AccessSettings-9517ca7b.js",
+      "_context-64a61e55.js",
+      "_get-a499a417.js",
+      "__baseGet-2d7ec73c.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "_toString-ca8e7984.js",
+      "__MapCache-33112411.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/smartList/settings/access/index.ts"
+  },
+  "../../../packages/browser/src/scenes/smartList/settings/basics/index.ts": {
+    "file": "assets/index-7d2b0416.js",
+    "imports": [
+      "index.html",
+      "_schema-0ef9650f.js",
+      "_BasicDetails-4c7dcb5a.js",
+      "_context-64a61e55.js",
+      "_compare-59127176.js",
+      "_get-a499a417.js",
+      "__baseGet-2d7ec73c.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "_toString-ca8e7984.js",
+      "__MapCache-33112411.js",
+      "_hasIn-2573f2bd.js",
+      "__getTag-6090c7bb.js",
+      "__baseIsEqual-6a83cae7.js",
+      "__flatRest-b95a9609.js",
+      "__setToString-bdfecbb7.js",
+      "_identity-66bf3aad.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/smartList/settings/basics/index.ts"
+  },
+  "../../../packages/browser/src/scenes/smartList/settings/danger/index.ts": {
+    "file": "assets/index-2065127e.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/smartList/settings/danger/index.ts"
+  },
+  "../../../packages/browser/src/scenes/smartList/settings/filters/index.ts": {
+    "file": "assets/index-56029362.js",
+    "imports": [
+      "index.html",
+      "_compare-59127176.js",
+      "_schema-0ef9650f.js",
+      "_context-64a61e55.js",
+      "_SmartListQueryBuilder-202e889c.js",
+      "_hasIn-2573f2bd.js",
+      "__getTag-6090c7bb.js",
+      "__MapCache-33112411.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "__baseIsEqual-6a83cae7.js",
+      "__baseGet-2d7ec73c.js",
+      "_toString-ca8e7984.js",
+      "__flatRest-b95a9609.js",
+      "__setToString-bdfecbb7.js",
+      "_identity-66bf3aad.js",
+      "_get-a499a417.js",
+      "_DatePicker-492430a5.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "../../../packages/browser/src/scenes/smartList/settings/filters/index.ts"
+  },
+  "_AccessSettings-9517ca7b.js": {
+    "file": "assets/AccessSettings-9517ca7b.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_BasicDetails-4c7dcb5a.js": {
+    "file": "assets/BasicDetails-4c7dcb5a.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_BookCard-1e8e6fd8.js": {
+    "file": "assets/BookCard-1e8e6fd8.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_BookClubSchedule-b857c0b7.js": {
+    "file": "assets/BookClubSchedule-b857c0b7.js",
+    "imports": [
+      "index.html",
+      "_GenericEmptyState-1de232de.js"
+    ]
+  },
+  "_BookGrid-d1e5a584.js": {
+    "file": "assets/BookGrid-d1e5a584.js",
+    "imports": [
+      "index.html",
+      "_GenericEmptyState-1de232de.js",
+      "_BookCard-1e8e6fd8.js"
+    ]
+  },
+  "_BookPageGrid-d521286a.js": {
+    "file": "assets/BookPageGrid-d521286a.js",
+    "imports": [
+      "index.html",
+      "_index-844f9b66.js",
+      "_index-8dbf803c.js"
+    ]
+  },
+  "_ConfiguredServersList-e0fb1c5c.js": {
+    "file": "assets/ConfiguredServersList-e0fb1c5c.js",
+    "imports": [
+      "index.html",
+      "_form-87d316e1.js",
+      "_settings-2-fbc58822.js",
+      "_trash-2-fbf044f3.js"
+    ]
+  },
+  "_CreateOrUpdateEmailerForm-3b5ca046.js": {
+    "file": "assets/CreateOrUpdateEmailerForm-3b5ca046.js",
+    "imports": [
+      "index.html",
+      "_form-87d316e1.js",
+      "_EmailerSendHistory-5f8d1bbe.js"
+    ]
+  },
+  "_DatePicker-492430a5.js": {
+    "file": "assets/DatePicker-492430a5.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_DirectoryPickerModal-99278e91.js": {
+    "file": "assets/DirectoryPickerModal-99278e91.js",
+    "imports": [
+      "index.html",
+      "_folder-0808e64d.js",
+      "_index-4669da61.js"
+    ]
+  },
+  "_EmailerSendHistory-5f8d1bbe.js": {
+    "file": "assets/EmailerSendHistory-5f8d1bbe.js",
+    "imports": [
+      "index.html",
+      "_emailers-e517b8a3.js",
+      "_GenericEmptyState-1de232de.js",
+      "_SortIcon-87e651c4.js",
+      "_copy-98e78aa3.js"
+    ]
+  },
+  "_EntityTableColumnConfiguration-433528d9.js": {
+    "file": "assets/EntityTableColumnConfiguration-433528d9.js",
+    "imports": [
+      "index.html",
+      "_TableOrGridLayout-85176fa3.js"
+    ]
+  },
+  "_FileExplorerProvider-1cc44cca.js": {
+    "file": "assets/FileExplorerProvider-1cc44cca.js",
+    "imports": [
+      "index.html",
+      "_GenericEmptyState-1de232de.js",
+      "_index-4669da61.js",
+      "_folder-0808e64d.js",
+      "_SortIcon-87e651c4.js",
+      "_table-3cc00b26.js",
+      "_index-844f9b66.js"
+    ]
+  },
+  "_FilterProvider-4557e2d5.js": {
+    "file": "assets/FilterProvider-4557e2d5.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_FontSelect-a5cf8581.js": {
+    "file": "assets/FontSelect-a5cf8581.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_GenericEmptyState-1de232de.js": {
+    "file": "assets/GenericEmptyState-1de232de.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_HorizontalCardList-9bda4f09.js": {
+    "file": "assets/HorizontalCardList-9bda4f09.js",
+    "imports": [
+      "index.html",
+      "_index-4669da61.js"
+    ]
+  },
+  "_Preformatted-da91132d.js": {
+    "file": "assets/Preformatted-da91132d.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_ReviewStepContainer-14afd98e.js": {
+    "file": "assets/ReviewStepContainer-14afd98e.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_ScannerOptInFeatures-91efb3fa.js": {
+    "file": "assets/ScannerOptInFeatures-91efb3fa.js",
+    "imports": [
+      "index.html",
+      "_useDebouncedValue-d7cdedcb.js",
+      "_lock-c5352ec9.js",
+      "_square-pen-e8a93391.js"
+    ]
+  },
+  "_Search-5d0171ee.js": {
+    "file": "assets/Search-5d0171ee.js",
+    "imports": [
+      "index.html",
+      "_usePreviousIsDifferent-28e9a2af.js",
+      "_useDebouncedValue-d7cdedcb.js"
+    ]
+  },
+  "_SeriesBookGrid-3aee2a5c.js": {
+    "file": "assets/SeriesBookGrid-3aee2a5c.js",
+    "imports": [
+      "index.html",
+      "_index-8dbf803c.js"
+    ]
+  },
+  "_SeriesCard-a0e252bb.js": {
+    "file": "assets/SeriesCard-a0e252bb.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_SmartListQueryBuilder-202e889c.js": {
+    "file": "assets/SmartListQueryBuilder-202e889c.js",
+    "imports": [
+      "index.html",
+      "_DatePicker-492430a5.js",
+      "_schema-0ef9650f.js",
+      "_context-64a61e55.js"
+    ]
+  },
+  "_SortIcon-87e651c4.js": {
+    "file": "assets/SortIcon-87e651c4.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_SteppedFormSceneHeader-40958543.js": {
+    "file": "assets/SteppedFormSceneHeader-40958543.js",
+    "imports": [
+      "index.html",
+      "_context-64a61e55.js"
+    ]
+  },
+  "_TableOrGridLayout-85176fa3.js": {
+    "file": "assets/TableOrGridLayout-85176fa3.js",
+    "imports": [
+      "index.html",
+      "_SortIcon-87e651c4.js",
+      "_Search-5d0171ee.js",
+      "_useIsInView-2f3406e1.js",
+      "_table-3cc00b26.js"
+    ]
+  },
+  "_ThumbnailConfig-3f641d08.js": {
+    "file": "assets/ThumbnailConfig-3f641d08.js",
+    "imports": [
+      "index.html",
+      "_WideSwitch-d0cfc2b9.js"
+    ]
+  },
+  "_WideSwitch-d0cfc2b9.js": {
+    "file": "assets/WideSwitch-d0cfc2b9.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "__MapCache-33112411.js": {
+    "file": "assets/_MapCache-33112411.js",
+    "imports": [
+      "_isObjectLike-7cf1d8a5.js"
+    ]
+  },
+  "__baseGet-2d7ec73c.js": {
+    "file": "assets/_baseGet-2d7ec73c.js",
+    "imports": [
+      "_isObjectLike-7cf1d8a5.js",
+      "_toString-ca8e7984.js",
+      "__MapCache-33112411.js"
+    ]
+  },
+  "__baseIsEqual-6a83cae7.js": {
+    "file": "assets/_baseIsEqual-6a83cae7.js",
+    "imports": [
+      "__getTag-6090c7bb.js",
+      "__MapCache-33112411.js",
+      "_isObjectLike-7cf1d8a5.js"
+    ]
+  },
+  "__baseIteratee-acd0c410.js": {
+    "file": "assets/_baseIteratee-acd0c410.js",
+    "imports": [
+      "_hasIn-2573f2bd.js",
+      "__baseIsEqual-6a83cae7.js",
+      "_get-a499a417.js",
+      "__baseGet-2d7ec73c.js",
+      "_identity-66bf3aad.js",
+      "_isObjectLike-7cf1d8a5.js"
+    ]
+  },
+  "__baseSlice-35988e44.js": {
+    "file": "assets/_baseSlice-35988e44.js"
+  },
+  "__flatRest-b95a9609.js": {
+    "file": "assets/_flatRest-b95a9609.js",
+    "imports": [
+      "__setToString-bdfecbb7.js",
+      "__MapCache-33112411.js"
+    ]
+  },
+  "__getTag-6090c7bb.js": {
+    "file": "assets/_getTag-6090c7bb.js",
+    "imports": [
+      "__MapCache-33112411.js",
+      "_isObjectLike-7cf1d8a5.js"
+    ]
+  },
+  "__setToString-bdfecbb7.js": {
+    "file": "assets/_setToString-bdfecbb7.js",
+    "imports": [
+      "__getTag-6090c7bb.js",
+      "_isObjectLike-7cf1d8a5.js",
+      "__MapCache-33112411.js",
+      "_identity-66bf3aad.js"
+    ]
+  },
+  "_compare-59127176.js": {
+    "file": "assets/compare-59127176.js",
+    "imports": [
+      "index.html",
+      "_hasIn-2573f2bd.js",
+      "__baseGet-2d7ec73c.js",
+      "__flatRest-b95a9609.js",
+      "__getTag-6090c7bb.js",
+      "__MapCache-33112411.js"
+    ]
+  },
+  "_construction-e8dd7010.js": {
+    "file": "assets/construction-e8dd7010.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_context-64a61e55.js": {
+    "file": "assets/context-64a61e55.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_copy-98e78aa3.js": {
+    "file": "assets/copy-98e78aa3.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_ellipsis-vertical-e010f8cd.js": {
+    "file": "assets/ellipsis-vertical-e010f8cd.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_emailers-e517b8a3.js": {
+    "file": "assets/emailers-e517b8a3.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_filter-6a302110.js": {
+    "file": "assets/filter-6a302110.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_folder-0808e64d.js": {
+    "file": "assets/folder-0808e64d.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_form-87d316e1.js": {
+    "file": "assets/form-87d316e1.js"
+  },
+  "_get-a499a417.js": {
+    "file": "assets/get-a499a417.js",
+    "imports": [
+      "index.html",
+      "__baseGet-2d7ec73c.js"
+    ]
+  },
+  "_hasIn-2573f2bd.js": {
+    "file": "assets/hasIn-2573f2bd.js",
+    "imports": [
+      "__getTag-6090c7bb.js",
+      "__baseIsEqual-6a83cae7.js",
+      "__MapCache-33112411.js",
+      "__baseGet-2d7ec73c.js",
+      "_isObjectLike-7cf1d8a5.js"
+    ]
+  },
+  "_identity-66bf3aad.js": {
+    "file": "assets/identity-66bf3aad.js"
+  },
+  "_index-4669da61.js": {
+    "file": "assets/index-4669da61.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_index-844f9b66.js": {
+    "file": "assets/index-844f9b66.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_index-8dbf803c.js": {
+    "file": "assets/index-8dbf803c.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_isObjectLike-7cf1d8a5.js": {
+    "file": "assets/isObjectLike-7cf1d8a5.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_lock-c5352ec9.js": {
+    "file": "assets/lock-c5352ec9.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_patterns-7ebcac83.js": {
+    "file": "assets/patterns-7ebcac83.js"
+  },
+  "_schema-0ef9650f.js": {
+    "file": "assets/schema-0ef9650f.js",
+    "imports": [
+      "_get-a499a417.js",
+      "index.html"
+    ]
+  },
+  "_schema-178ade57.js": {
+    "file": "assets/schema-178ade57.js",
+    "imports": [
+      "index.html",
+      "_form-87d316e1.js"
+    ]
+  },
+  "_settings-2-fbc58822.js": {
+    "file": "assets/settings-2-fbc58822.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_sparkles-ea167c2b.js": {
+    "file": "assets/sparkles-ea167c2b.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_square-pen-e8a93391.js": {
+    "file": "assets/square-pen-e8a93391.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_table-3cc00b26.js": {
+    "file": "assets/table-3cc00b26.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_toString-ca8e7984.js": {
+    "file": "assets/toString-ca8e7984.js",
+    "imports": [
+      "_isObjectLike-7cf1d8a5.js"
+    ]
+  },
+  "_trash-2-fbf044f3.js": {
+    "file": "assets/trash-2-fbf044f3.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_uniqBy-bda451ec.js": {
+    "file": "assets/uniqBy-bda451ec.js",
+    "imports": [
+      "index.html",
+      "__baseIteratee-acd0c410.js",
+      "__baseIsEqual-6a83cae7.js",
+      "__getTag-6090c7bb.js"
+    ]
+  },
+  "_useBookPreferences-8bd28592.js": {
+    "file": "assets/useBookPreferences-8bd28592.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_useDebouncedValue-d7cdedcb.js": {
+    "file": "assets/useDebouncedValue-d7cdedcb.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_useIsInView-2f3406e1.js": {
+    "file": "assets/useIsInView-2f3406e1.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_usePrevious-4befd47c.js": {
+    "file": "assets/usePrevious-4befd47c.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_usePreviousIsDifferent-28e9a2af.js": {
+    "file": "assets/usePreviousIsDifferent-28e9a2af.js",
+    "imports": [
+      "_usePrevious-4befd47c.js"
+    ]
+  },
+  "index.css": {
+    "file": "assets/index-0686a1f6.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "assets": [
+      "assets/InterVariable-8af7bd5b.woff2",
+      "assets/InterVariable-Italic-0470791f.woff2",
+      "assets/Inter-Thin-2ab12bc9.woff2",
+      "assets/Inter-ThinItalic-e5555942.woff2",
+      "assets/Inter-ExtraLight-b6c261b8.woff2",
+      "assets/Inter-ExtraLightItalic-47608eb3.woff2",
+      "assets/Inter-Light-d12f4645.woff2",
+      "assets/Inter-LightItalic-72319cf2.woff2",
+      "assets/Inter-Regular-b6f9db9e.woff2",
+      "assets/Inter-Italic-708b7baa.woff2",
+      "assets/Inter-Medium-8458f8af.woff2",
+      "assets/Inter-MediumItalic-9f4481b0.woff2",
+      "assets/Inter-SemiBold-8e52a861.woff2",
+      "assets/Inter-SemiBoldItalic-8789e3e4.woff2",
+      "assets/Inter-Bold-22097670.woff2",
+      "assets/Inter-BoldItalic-af46bd58.woff2",
+      "assets/Inter-ExtraBold-98023dd7.woff2",
+      "assets/Inter-ExtraBoldItalic-fe47bb9a.woff2",
+      "assets/Inter-Black-aa867fe6.woff2",
+      "assets/Inter-BlackItalic-4b50bf83.woff2",
+      "assets/InterDisplay-Thin-14b2dbbc.woff2",
+      "assets/InterDisplay-ThinItalic-dd979951.woff2",
+      "assets/InterDisplay-ExtraLight-cd4fbf33.woff2",
+      "assets/InterDisplay-ExtraLightItalic-e102b9ac.woff2",
+      "assets/InterDisplay-Light-f278fa13.woff2",
+      "assets/InterDisplay-LightItalic-9f3d68e6.woff2",
+      "assets/InterDisplay-Regular-0b4b8d6f.woff2",
+      "assets/InterDisplay-Italic-5ffc79b8.woff2",
+      "assets/InterDisplay-Medium-da36cb98.woff2",
+      "assets/InterDisplay-MediumItalic-8ad57b6b.woff2",
+      "assets/InterDisplay-SemiBold-a14bec46.woff2",
+      "assets/InterDisplay-SemiBoldItalic-7ff3913f.woff2",
+      "assets/InterDisplay-Bold-1c2fea93.woff2",
+      "assets/InterDisplay-BoldItalic-464a1e6d.woff2",
+      "assets/InterDisplay-ExtraBold-73c965c9.woff2",
+      "assets/InterDisplay-ExtraBoldItalic-5dc7c1fd.woff2",
+      "assets/InterDisplay-Black-b657e10e.woff2",
+      "assets/InterDisplay-BlackItalic-fcf5f620.woff2",
+      "assets/OpenDyslexic-Regular-2282dbd6.woff",
+      "assets/OpenDyslexic-Regular-27f2cdc7.svg",
+      "assets/Atkinson-Hyperlegible-Regular-102-b51d2e16.woff",
+      "assets/Atkinson-Hyperlegible-Regular-102-efe52c57.woff2",
+      "assets/Atkinson-Hyperlegible-Italic-102-a4866fde.woff",
+      "assets/Atkinson-Hyperlegible-Italic-102-a62205ae.woff2",
+      "assets/Atkinson-Hyperlegible-Bold-102-f0de8ccb.woff",
+      "assets/Atkinson-Hyperlegible-Bold-102-f0189dcb.woff2",
+      "assets/CharisSIL-Regular-4c8410c2.woff",
+      "assets/CharisSIL-Regular-9e15f73f.woff2",
+      "assets/CharisSIL-Italic-ada19776.woff",
+      "assets/CharisSIL-Italic-2ed5fdeb.woff2",
+      "assets/CharisSIL-Bold-26e48685.woff",
+      "assets/CharisSIL-Bold-e69f0ca6.woff2",
+      "assets/CharisSIL-BoldItalic-b73c43df.woff",
+      "assets/CharisSIL-BoldItalic-43b29031.woff2",
+      "assets/Literata-ExtraLight-d76370e0.woff2",
+      "assets/Literata-ExtraLightItalic-efb05c5e.woff2",
+      "assets/Literata-Light-d41a9e4c.woff2",
+      "assets/Literata-LightItalic-2df7e665.woff2",
+      "assets/Literata-Regular-94f47c83.woff2",
+      "assets/Literata-Italic-b634bb32.woff2",
+      "assets/Literata-Medium-f65d6e23.woff2",
+      "assets/Literata-MediumItalic-525baa62.woff2",
+      "assets/Literata-Bold-dace38d7.woff2",
+      "assets/Literata-BoldItalic-bb97edee.woff2",
+      "assets/Literata-ExtraBold-8111a26b.woff2",
+      "assets/Literata-ExtraBoldItalic-6cda8aab.woff2",
+      "assets/Nunito-cyrillic-ext-italic-a3e536c6.woff2",
+      "assets/Nunito-cyrillic-italic-94222a82.woff2",
+      "assets/Nunito-vietnamese-italic-cb0dc02c.woff2",
+      "assets/Nunito-latin-ext-italic-b531cc2e.woff2",
+      "assets/Nunito-latin-italic-d5618515.woff2",
+      "assets/Nunito-cyrillic-ext-82fcd913.woff2",
+      "assets/Nunito-cyrillic-cf6e8088.woff2",
+      "assets/Nunito-vietnamese-d2b38335.woff2",
+      "assets/Nunito-latin-ext-8f81887b.woff2",
+      "assets/Nunito-latin-dd1d87a3.woff2",
+      "assets/Libre-Baskerville-latin-ext-italic-2a1799b5.woff2",
+      "assets/Libre-Baskerville-latin-italic-af54ff2c.woff2",
+      "assets/Libre-Baskerville-latin-ext-3392b5e0.woff2",
+      "assets/Libre-Baskerville-latin-dbcc0e48.woff2",
+      "assets/Libre-Baskerville-latin-ext-bold-0dd85d6c.woff2",
+      "assets/Libre-Baskerville-latin-bold-546db554.woff2",
+      "assets/Bitter-cyrillic-ext-italic-496bce85.woff2",
+      "assets/Bitter-cyrillic-italic-65a940c7.woff2",
+      "assets/Bitter-vietnamese-italic-a5997e8e.woff2",
+      "assets/Bitter-latin-ext-italic-24136f4f.woff2",
+      "assets/Bitter-latin-italic-993536f5.woff2",
+      "assets/Bitter-cyrillic-ext-85a9bbc7.woff2",
+      "assets/Bitter-cyrillic-78bbfc5a.woff2",
+      "assets/Bitter-vietnamese-f788a259.woff2",
+      "assets/Bitter-latin-ext-1c66fecf.woff2",
+      "assets/Bitter-latin-9e451c93.woff2"
+    ],
+    "css": [
+      "assets/index-0686a1f6.css"
+    ],
+    "dynamicImports": [
+      "../../../packages/browser/src/scenes/settings/app/general/GeneralSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/settings/app/appearance/AppearanceSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/settings/app/reader/ReaderDefaultSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/settings/app/desktop/index.ts",
+      "../../../packages/browser/src/scenes/settings/app/apiKeys/index.ts",
+      "../../../packages/browser/src/scenes/settings/server/email/EmailSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/settings/server/email/CreateEmailerScene.tsx",
+      "../../../packages/browser/src/scenes/settings/server/email/EditEmailerScene.tsx",
+      "../../../packages/browser/src/scenes/settings/server/users/UsersScene.tsx",
+      "../../../packages/browser/src/scenes/settings/server/users/create-or-update/CreateUserScene.tsx",
+      "../../../packages/browser/src/scenes/settings/server/general/GeneralServerSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/settings/server/logs/ServerLogsScene.tsx",
+      "../../../packages/browser/src/scenes/settings/server/jobs/JobSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/bookSearch/BookSearchScene.tsx",
+      "../../../packages/browser/src/scenes/book/BookOverviewScene.tsx",
+      "../../../packages/browser/src/scenes/book/reader/BookReaderScene.tsx",
+      "../../../packages/browser/src/scenes/book/reader/EpubReaderScene.tsx",
+      "../../../packages/browser/src/scenes/book/reader/PDFReaderScene.tsx",
+      "../../../packages/browser/src/scenes/book/settings/BookManagementScene.tsx",
+      "../../../packages/browser/src/scenes/bookClub/tabs/settings/basics/index.ts",
+      "../../../packages/browser/src/scenes/bookClub/tabs/settings/members/index.ts",
+      "../../../packages/browser/src/scenes/bookClub/tabs/settings/danger/index.ts",
+      "../../../packages/browser/src/scenes/bookClub/tabs/settings/scheduler/index.ts",
+      "../../../packages/browser/src/scenes/bookClub/createClub/index.ts",
+      "../../../packages/browser/src/scenes/bookClub/UserBookClubsScene.tsx",
+      "../../../packages/browser/src/scenes/bookClub/explore/BookClubExploreScene.tsx",
+      "../../../packages/browser/src/scenes/bookClub/tabs/home/index.ts",
+      "../../../packages/browser/src/scenes/bookClub/tabs/discussion/index.ts",
+      "../../../packages/browser/src/scenes/bookClub/tabs/members/index.ts",
+      "../../../packages/browser/src/scenes/series/tabs/books/SeriesBooksScene.tsx",
+      "../../../packages/browser/src/scenes/series/tabs/settings/SeriesSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/series/tabs/files/SeriesExplorerScene.tsx",
+      "../../../packages/browser/src/scenes/seriesSearch/index.ts",
+      "../../../packages/browser/src/scenes/library/tabs/settings/basics/BasicSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/library/tabs/settings/options/thumbnails/ThumbnailSettingsScene.tsx",
+      "../../../packages/browser/src/scenes/library/tabs/settings/options/scanner/index.ts",
+      "../../../packages/browser/src/scenes/library/tabs/settings/options/analysis/index.ts",
+      "../../../packages/browser/src/scenes/library/tabs/settings/options/readingDefaults/index.ts",
+      "../../../packages/browser/src/scenes/library/tabs/settings/danger/accessControl/index.ts",
+      "../../../packages/browser/src/scenes/library/tabs/settings/danger/deletion/index.ts",
+      "../../../packages/browser/src/scenes/createLibrary/index.ts",
+      "../../../packages/browser/src/scenes/library/tabs/settings/index.ts",
+      "../../../packages/browser/src/scenes/library/tabs/files/LibraryExplorerScene.tsx",
+      "../../../packages/browser/src/scenes/library/tabs/series/LibrarySeriesScene.tsx",
+      "../../../packages/browser/src/scenes/library/tabs/books/LibraryBooksScene.tsx",
+      "../../../packages/browser/src/scenes/librarySearch/index.ts",
+      "../../../packages/browser/src/scenes/onboarding/OnBoardingScene.tsx",
+      "../../../packages/browser/src/scenes/smartList/settings/basics/index.ts",
+      "../../../packages/browser/src/scenes/smartList/settings/access/index.ts",
+      "../../../packages/browser/src/scenes/smartList/settings/filters/index.ts",
+      "../../../packages/browser/src/scenes/smartList/settings/danger/index.ts",
+      "../../../packages/browser/src/scenes/smartList/items/UserSmartListItemsScene.tsx",
+      "../../../packages/browser/src/scenes/smartList/UserSmartListsScene.tsx",
+      "../../../packages/browser/src/scenes/createSmartList/CreateSmartListScene.tsx",
+      "../../../packages/browser/src/scenes/home/index.ts",
+      "../../../packages/browser/src/scenes/error/FourOhFour.tsx",
+      "../../../packages/browser/src/scenes/error/ServerConnectionErrorScene.tsx",
+      "../../../packages/browser/src/scenes/auth/index.ts"
+    ],
+    "file": "assets/index-4bec1d4c.js",
+    "isEntry": true,
+    "src": "index.html"
+  }
+}
