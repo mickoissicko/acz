@@ -1,4 +1,4 @@
-// da dom tss
+// Dom Elements
 const LibraryPicker = document.getElementById('LibraryPicker');
 const RecentGrid = document.getElementById('RecentGrid');
 const CollectionsContainer = document.getElementById('CollectionsContainer');
@@ -7,42 +7,46 @@ const ViewTitle = document.getElementById('ViewTitle');
 const BackBtn = document.getElementById('BackBtn');
 const SeeAllRecent = document.getElementById('SeeAllRecent');
 
-// reader stuff
+// Reader Elements
 const ReaderOverlay = document.getElementById('ReaderOverlay');
 const ReaderContent = document.getElementById('ReaderContent');
-const ReaderHUD = document.getElementById('ReaderHUD');
+const ReaderHud = document.getElementById('ReaderHud');
 const ReaderProgress = document.getElementById('ReaderProgress');
 const PageCounter = document.getElementById('PageCounter');
 
-// global
+// Constants
 const STORAGE_KEY = "MANGA_FLOW_RECENT";
+const PREFETCH_LIMIT = 3;
+
+// Global State
 let CURRENT_IMAGES = [];
 let CURRENT_INDEX = 0;
 let READER_MODE = 'scroll'; 
-let OBSERVER = null; // to observe scrolling (observer is a tuff ass name btw)
+let OBSERVER = null; 
 let SaveTimeout;
+let PREFETCH_QUEUE = new Set();
 
-const GET_RECENT = () => JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+const GetRecent = () => JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 
-const SAVE_PROGRESS_THROTTLED = () => {
+const SaveProgressThrottled = () => {
     clearTimeout(SaveTimeout);
     SaveTimeout = setTimeout(() => {
         const CurrentManga = {
             Title: document.getElementById('ReaderTitle').innerText,
             FullPath: new URLSearchParams(CURRENT_IMAGES[0].split('?')[1]).get('path')
         };
-        SAVE_PROGRESS(CurrentManga);
+        SaveProgress(CurrentManga);
     }, 1000);
 };
 
-const UPDATE_BUTTON_UI = () => {
+const UpdateButtonUi = () => {
     document.getElementById('BtnScroll').style.background = READER_MODE === 'scroll' ? '#6366f1' : 'transparent';
     document.getElementById('BtnPage').style.background = READER_MODE === 'page' ? '#6366f1' : 'transparent';
 };
 
-const SAVE_PROGRESS = (MangaData) => {
-    let Recent = GET_RECENT();
-    const PageName = CURRENT_IMAGES[CURRENT_INDEX]?.split('page=')[1]; // url name
+const SaveProgress = (MangaData) => {
+    let Recent = GetRecent();
+    const PageName = CURRENT_IMAGES[CURRENT_INDEX]?.split('page=')[1]; 
     
     const Entry = {
         ...MangaData,
@@ -54,26 +58,27 @@ const SAVE_PROGRESS = (MangaData) => {
 
     Recent = Recent.filter(Item => Item.FullPath !== MangaData.FullPath);
     Recent.unshift(Entry);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(Recent.slice(0, 20))); // Keep last 20
-    RENDER_RECENT_WIDGET();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(Recent.slice(0, 20))); 
+    RenderRecentWidget();
 };
 
-const SAVE_RECENT = (Manga) => {
-    let Recent = GET_RECENT();
+const SaveRecent = (Manga) => {
+    let Recent = GetRecent();
     Recent = Recent.filter(Item => Item.Title !== Manga.Title);
     Manga.Timestamp = new Date().getTime();
     Recent.unshift(Manga);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(Recent));
-    RENDER_RECENT_WIDGET();
+    RenderRecentWidget();
 };
 
-const LOAD_LIBRARY = async (Path) => {
+const LoadLibrary = async (Path) => {
     const Res = await fetch(`http://localhost:3000/api/content?path=${encodeURIComponent(Path)}`);
     const Data = await Res.json();
-    const Recent = GET_RECENT();
+    const Recent = GetRecent();
 
-    RENDER_RECENT_WIDGET();
+    RenderRecentWidget();
 
+    // The backend now includes "Uncategorised" within Data.Collections
     CollectionsContainer.innerHTML = Object.entries(Data.Collections).map(([Name, Items]) => `
         <section>
             <h2 class="text-xl font-bold mb-6 capitalize flex items-center gap-3">
@@ -86,7 +91,7 @@ const LOAD_LIBRARY = async (Path) => {
                     const CoverUrl = Saved ? `${I.ThumbnailUrl}${PageParam}` : I.ThumbnailUrl;
 
                     return `
-                        <div class="group cursor-pointer" onclick="HANDLE_CLICK('${encodeURIComponent(JSON.stringify(I))}')">
+                        <div class="group cursor-pointer" onclick="HandleClick('${encodeURIComponent(JSON.stringify(I))}')">
                             <div class="squishy-card aspect-[3/4] rounded-2xl mb-3 overflow-hidden shadow-2xl">
                                 <img src="${CoverUrl}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>
@@ -100,8 +105,8 @@ const LOAD_LIBRARY = async (Path) => {
     `).join('');
 };
 
-const RENDER_RECENT_WIDGET = () => {
-    const Recent = GET_RECENT();
+const RenderRecentWidget = () => {
+    const Recent = GetRecent();
     if (Recent.length === 0) { HeroSection.classList.add('hidden'); return; }
     HeroSection.classList.remove('hidden');
     
@@ -114,7 +119,7 @@ const RENDER_RECENT_WIDGET = () => {
 
         return `
         <div class="squishy-card p-4 rounded-3xl flex gap-6 items-center cursor-pointer active:scale-95 transition" 
-             onclick="HANDLE_CLICK('${encodeURIComponent(JSON.stringify(Item))}')">
+             onclick="HandleClick('${encodeURIComponent(JSON.stringify(Item))}')">
             <img src="${Thumb}" class="w-20 h-28 rounded-xl object-cover shadow-lg pointer-events-none" 
                  onerror="this.src='https://via.placeholder.com/150?text=No+Cover'">
             <div class="flex-1">
@@ -126,67 +131,94 @@ const RENDER_RECENT_WIDGET = () => {
     `}).join('');
 };
 
-const OPEN_READER = async (MangaData) => {
+const OpenReader = async (MangaData) => {
+    PREFETCH_QUEUE.clear();
+    ReaderContent.innerHTML = `
+        <div id="ReaderLoader" class="flex flex-col items-center justify-center h-full w-full gap-4">
+            <span class="loader"></span>
+            <p class="text-indigo-400 font-bold text-xs uppercase tracking-widest">Initialising Gallery...</p>
+        </div>
+    `;
+    
     document.getElementById('ReaderTitle').innerText = MangaData.Title;
     ReaderOverlay.classList.remove('hidden');
     
-    const Res = await fetch(`http://localhost:3000/api/read?path=${encodeURIComponent(MangaData.FullPath)}`);
-    const Data = await Res.json();
+    try {
+        const Res = await fetch(`http://localhost:3000/api/read?path=${encodeURIComponent(MangaData.FullPath)}`);
+        const Data = await Res.json();
 
-    CURRENT_IMAGES = Data.PageNames.map(Name => 
-        `http://localhost:3000/api/page?path=${encodeURIComponent(MangaData.FullPath)}&page=${encodeURIComponent(Name)}`
-    );
-    
-    const Saved = GET_RECENT().find(I => I.FullPath === MangaData.FullPath);
-    
-    CURRENT_INDEX = (Saved && Saved.LastIndex !== undefined) ? Saved.LastIndex : 0;
-    READER_MODE = Saved ? Saved.LastMode : 'scroll';
+        CURRENT_IMAGES = Data.PageNames.map(Name => 
+            `http://localhost:3000/api/page?path=${encodeURIComponent(MangaData.FullPath)}&page=${encodeURIComponent(Name)}`
+        );
+        
+        const Saved = GetRecent().find(I => I.FullPath === MangaData.FullPath);
+        CURRENT_INDEX = (Saved && Saved.LastIndex !== undefined) ? Saved.LastIndex : 0;
+        
+        const TargetMode = Saved?.LastMode || READER_MODE || 'scroll';
+        ForceSyncMode(TargetMode);
+        
+        if (READER_MODE === 'scroll' && CURRENT_INDEX > 0) {
+            setTimeout(() => {
+                const Target = ReaderContent.querySelector(`[data-index="${CURRENT_INDEX}"]`);
+                if (Target) Target.scrollIntoView({ block: 'start' });
+            }, 100);
+        }
 
-    RENDER_READER_CONTENT();
-    
-    if (READER_MODE === 'scroll' && CURRENT_INDEX > 0) {
-        setTimeout(() => {
-            const Target = ReaderContent.children[CURRENT_INDEX];
-            Target?.scrollIntoView({ block: 'start' });
-        }, 150);
+        RunPrefetch();
+    } catch (Err) {
+        console.error("OpenReader failed:", Err);
+        ReaderContent.innerHTML = `<p class="text-red-500">Error loading content.</p>`;
     }
 };
 
-const SET_READER_MODE = (Mode) => {
+const ForceSyncMode = (Mode) => {
     READER_MODE = Mode;
-    document.getElementById('BtnScroll').style.background = Mode === 'scroll' ? '#6366f1' : 'transparent';
-    document.getElementById('BtnPage').style.background = Mode === 'page' ? '#6366f1' : 'transparent';
-    
-    ReaderContent.scrollTop = 0;
-    RENDER_READER_CONTENT();
+    RenderReaderContent();
+    UpdateButtonUi();
 };
 
-const SETUP_SCROLL_OBSERVER = () => {
-    const Options = { root: ReaderContent, threshold: 0.2 };
+const SetReaderMode = (Mode) => {
+    ForceSyncMode(Mode);
+    
+    const CurrentTitle = document.getElementById('ReaderTitle').innerText;
+    const Recent = GetRecent();
+    const MangaEntry = Recent.find(R => R.Title === CurrentTitle);
+    
+    if (MangaEntry) {
+        SaveProgress({
+            Title: CurrentTitle,
+            FullPath: MangaEntry.FullPath
+        });
+    }
+};
+
+const SetupScrollObserver = () => {
+    if (OBSERVER) OBSERVER.disconnect();
+    
+    const Options = { root: ReaderContent, threshold: 0.3 };
     OBSERVER = new IntersectionObserver((Entries) => {
         Entries.forEach(Entry => {
             if (Entry.isIntersecting) {
                 CURRENT_INDEX = parseInt(Entry.target.getAttribute('data-index'));
-                UPDATE_HUD();
-                SAVE_PROGRESS_THROTTLED();
+                UpdateHud();
+                SaveProgressThrottled();
+                RunPrefetch();
             }
         });
     }, Options);
 
-    Array.from(ReaderContent.children).forEach(Child => OBSERVER.observe(Child));
+    const Targets = ReaderContent.querySelectorAll('[data-index]');
+    Targets.forEach(T => OBSERVER.observe(T));
 };
 
-const RENDER_READER_CONTENT = () => {
-    // Clean up old observer
-    if (OBSERVER) OBSERVER.disconnect();
-
+const RenderReaderContent = () => {
     if (READER_MODE === 'scroll') {
-        ReaderContent.innerHTML = CURRENT_IMAGES.map((ImgUrl, idx) => `
-            <div class="flex flex-col items-center bg-black py-2" data-index="${idx}">
-                <img src="${ImgUrl}" loading="lazy" class="w-full max-w-4xl block pointer-events-none">
+        ReaderContent.innerHTML = CURRENT_IMAGES.map((ImgUrl, Idx) => `
+            <div class="flex flex-col items-center bg-black py-2" data-index="${Idx}">
+                <img src="${ImgUrl}" loading="lazy" class="w-full max-w-4xl block pointer-events-none min-h-[600px] bg-white/5">
             </div>
         `).join('');
-        SETUP_SCROLL_OBSERVER();
+        SetupScrollObserver();
     } else {
         ReaderContent.innerHTML = `
             <div class="h-screen w-screen flex items-center justify-center bg-black">
@@ -194,82 +226,76 @@ const RENDER_READER_CONTENT = () => {
             </div>
         `;
     }
-    UPDATE_HUD();
-    UPDATE_BUTTON_UI();
+    UpdateHud();
 };
 
-const UPDATE_HUD = () => {
+const UpdateHud = () => {
     const Total = CURRENT_IMAGES.length;
     const Current = CURRENT_INDEX + 1;
     PageCounter.innerText = `${Current} / ${Total}`;
     ReaderProgress.style.width = `${(Current / Total) * 100}%`;
 };
 
-const NEXT_PAGE = () => {
+const NextPage = () => {
     if (READER_MODE === 'page' && CURRENT_INDEX < CURRENT_IMAGES.length - 1) {
         CURRENT_INDEX++;
-        RENDER_READER_CONTENT();
-        SAVE_PROGRESS_THROTTLED();
-        PRELOAD();
+        RenderReaderContent();
+        SaveProgressThrottled();
+        RunPrefetch();
     }
 };
 
-const PREV_PAGE = () => {
+const PrevPage = () => {
     if (READER_MODE === 'page' && CURRENT_INDEX > 0) {
         CURRENT_INDEX--;
-        RENDER_READER_CONTENT();
-        SAVE_PROGRESS_THROTTLED();
+        RenderReaderContent();
+        SaveProgressThrottled();
     }
 };
 
-const PRELOAD = () => {
-    const Next = CURRENT_INDEX + 1;
-    if (Next < CURRENT_IMAGES.length) {
-        const img = new Image();
-        img.src = CURRENT_IMAGES[Next];
+const RunPrefetch = () => {
+    for (let I = 1; I <= PREFETCH_LIMIT; I++) {
+        const NextIdx = CURRENT_INDEX + I;
+        if (NextIdx < CURRENT_IMAGES.length) {
+            const Url = CURRENT_IMAGES[NextIdx];
+            if (!PREFETCH_QUEUE.has(Url)) {
+                const Img = new Image();
+                Img.src = Url;
+                PREFETCH_QUEUE.add(Url);
+            }
+        }
     }
 };
 
-const CLOSE_READER = () => {
+const CloseReader = () => {
     ReaderOverlay.classList.add('hidden');
-    ReaderHUD.style.opacity = "0";
-    ReaderHUD.style.pointerEvents = "none";
+    ReaderHud.style.opacity = "0";
+    ReaderHud.style.pointerEvents = "none";
 };
 
 ReaderOverlay.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') return;
-
-    const IsHidden = ReaderHUD.style.opacity === "0" || ReaderHUD.style.opacity === "";
-    ReaderHUD.style.opacity = IsHidden ? "1" : "0";
-    ReaderHUD.style.pointerEvents = IsHidden ? "auto" : "none";
+    const IsHidden = ReaderHud.style.opacity === "0" || ReaderHud.style.opacity === "";
+    ReaderHud.style.opacity = IsHidden ? "1" : "0";
+    ReaderHud.style.pointerEvents = IsHidden ? "auto" : "none";
 });
 
 document.addEventListener('keydown', (e) => {
     if (ReaderOverlay.classList.contains('hidden')) return;
-
-    if (e.key === "ArrowRight" || e.key === "d") NEXT_PAGE();
-    if (e.key === "ArrowLeft" || e.key === "a") PREV_PAGE();
-    if (e.key === "Escape") CLOSE_READER();
-    if (e.key === "m") SET_READER_MODE(READER_MODE === 'page' ? 'scroll' : 'page');
+    if (e.key === "ArrowRight" || e.key === "d") NextPage();
+    if (e.key === "ArrowLeft" || e.key === "a") PrevPage();
+    if (e.key === "Escape") CloseReader();
+    if (e.key === "m") SetReaderMode(READER_MODE === 'page' ? 'scroll' : 'page');
 });
 
-ReaderContent.addEventListener('scroll', () => {
-    if (READER_MODE === 'scroll') {
-        const Percent = (ReaderContent.scrollTop / (ReaderContent.scrollHeight - ReaderContent.clientHeight)) * 100;
-        ReaderProgress.style.width = `${Percent || 0}%`;
-        PageCounter.innerText = "SCROLLING";
-    }
-});
-
-const HANDLE_CLICK = (EncodedData) => {
+const HandleClick = (EncodedData) => {
     const MangaData = JSON.parse(decodeURIComponent(EncodedData));
-    SAVE_RECENT(MangaData);
-    OPEN_READER(MangaData);
+    SaveRecent(MangaData);
+    OpenReader(MangaData);
 };
 
-const SHOW_HISTORY = () => {
-    const Recent = GET_RECENT();
-
+const ShowHistory = () => {
+    const Recent = GetRecent();
     ViewTitle.innerText = "Reading History";
     ViewSub.innerText = "Everything you've touched recently.";
     BackBtn.classList.remove('hidden');
@@ -287,7 +313,7 @@ const SHOW_HISTORY = () => {
                 const Thumb = `http://localhost:3000/api/thumbnail?path=${encodeURIComponent(Item.FullPath)}${PageParam}`;
                 
                 return `
-                    <div class="group cursor-pointer" onclick="HANDLE_CLICK('${encodeURIComponent(JSON.stringify(Item))}')">
+                    <div class="group cursor-pointer" onclick="HandleClick('${encodeURIComponent(JSON.stringify(Item))}')">
                         <div class="squishy-card aspect-[3/4] rounded-2xl mb-3 overflow-hidden shadow-2xl">
                             <img src="${Thumb}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         </div>
@@ -298,29 +324,28 @@ const SHOW_HISTORY = () => {
             }).join('')}
         </div>
         <div class="flex justify-center mt-12">
-            <button onclick="CLEAR_HISTORY()" class="text-[10px] text-red-500 hover:text-red-400 font-bold uppercase tracking-widest transition">Clear All History</button>
+            <button onclick="ClearHistory()" class="text-[10px] text-red-500 hover:text-red-400 font-bold uppercase tracking-widest transition">Clear All History</button>
         </div>
     `;
 };
 
-const SHOW_COLLECTIONS = () => {
+const ShowCollections = () => {
     ViewTitle.innerText = "Your Library";
     ViewSub.innerText = "Let's get readin' :P";
     BackBtn.classList.add('hidden');
-    LOAD_LIBRARY(LibraryPicker.value);
+    LoadLibrary(LibraryPicker.value);
 };
 
-const CLEAR_HISTORY = () => {
+const ClearHistory = () => {
     if (confirm("Are you sure you want to clear your reading history?")) {
         localStorage.removeItem(STORAGE_KEY);
-        SHOW_COLLECTIONS();
+        ShowCollections();
     }
 };
 
-SeeAllRecent.addEventListener('click', SHOW_HISTORY);
+SeeAllRecent.addEventListener('click', ShowHistory);
 
-// init
-const INITIALIZE = async () => {
+const Initialise = async () => {
     try {
         const Res = await fetch('http://localhost:3000/api/libraries');
         const Libraries = await Res.json();
@@ -330,8 +355,8 @@ const INITIALIZE = async () => {
             Opt.textContent = Lib.split('/').filter(p => p).pop() || Lib;
             LibraryPicker.appendChild(Opt);
         });
-        if (Libraries.length > 0) LOAD_LIBRARY(Libraries[0]);
-    } catch (Err) { console.error("Initialize failed:", Err); }
+        if (Libraries.length > 0) LoadLibrary(Libraries[0]);
+    } catch (Err) { console.error("Initialise failed:", Err); }
 };
 
-INITIALIZE();
+Initialise();

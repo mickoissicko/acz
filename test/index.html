@@ -12,12 +12,30 @@
         .squishy-card:hover { transform: scale(1.05) translateY(-5px); background: rgba(255,255,255,0.08); border-color: rgba(99, 102, 241, 0.3); }
         .glass-nav { background: rgba(10, 10, 12, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
         select option { background: #1a1a1e; color: white; }
-        #ScrollContainer::-webkit-scrollbar { width: 4px; }
-        #ScrollContainer::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 10px; }
-        #PageContainer { background: #000; width: 100vw; height: 100vh; }
-        #ScrollContainer img, #ActivePage { pointer-events: none; user-select: none; }
-        #ReaderContent img { pointer-events: none; user-select: none; }
-        #ReaderContent { scroll-behavior: smooth; }
+        
+        /* Loading Spinner */
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #FFF;
+            border-bottom-color: #6366f1;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        #ReaderContent::-webkit-scrollbar { width: 4px; }
+        #ReaderContent::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 10px; }
+        
+        #ReaderContent img, #ActivePage {
+            pointer-events: none;
+            user-select: none;
+        }
+        #ReaderContent {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="p-6 md:p-12">
@@ -33,7 +51,7 @@
                 <h1 id="ViewTitle" class="text-3xl font-extrabold tracking-tight text-white">Your Library</h1>
                 <p id="ViewSub" class="text-gray-500 text-sm mt-1">Let's get a-readin' :P</p>
             </div>
-            <button id="BackBtn" onclick="SHOW_COLLECTIONS()" class="hidden bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg text-xs font-bold transition">← BACK</button>
+            <button id="BackBtn" onclick="ShowCollections()" class="hidden bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg text-xs font-bold transition">← BACK</button>
         </header>
 
         <section id="HeroSection" class="mb-16 hidden">
@@ -48,23 +66,21 @@
     </main>
 
     <div id="ReaderOverlay" class="fixed inset-0 z-[100] bg-black hidden flex flex-col overflow-hidden">
+        <div id="ReaderContent" class="absolute inset-0 z-0 overflow-y-auto overflow-x-hidden flex flex-col items-center"></div>
     
-        <div id="ReaderContent" class="absolute inset-0 z-0 overflow-y-auto overflow-x-hidden flex flex-col items-center">
-            </div>
-    
-        <div id="ReaderHUD" class="absolute inset-0 z-10 bg-black/80 backdrop-blur-md flex flex-col justify-between p-10 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div id="ReaderHud" class="absolute inset-0 z-10 bg-black/80 backdrop-blur-md flex flex-col justify-between p-10 opacity-0 pointer-events-none transition-opacity duration-200">
             <div class="flex justify-between items-start">
                 <div>
                     <h2 id="ReaderTitle" class="text-3xl font-black text-white">Title</h2>
                     <p class="text-indigo-400 font-bold text-xs uppercase tracking-[0.3em] mt-2">Immersive Mode</p>
                 </div>
-                <button onclick="CLOSE_READER()" class="text-xs font-bold text-gray-400 hover:text-white transition tracking-widest">CLOSE [ESC]</button>
+                <button onclick="CloseReader()" class="text-xs font-bold text-gray-400 hover:text-white transition tracking-widest">CLOSE [ESC]</button>
             </div>
     
             <div class="flex flex-col items-center gap-8">
                 <div class="flex bg-white/5 p-1 rounded-2xl border border-white/10">
-                    <button id="BtnScroll" onclick="SET_READER_MODE('scroll')" class="px-8 py-3 rounded-xl text-xs font-bold transition text-white">SCROLL</button>
-                    <button id="BtnPage" onclick="SET_READER_MODE('page')" class="px-8 py-3 rounded-xl text-xs font-bold transition text-white">PAGE</button>
+                    <button id="BtnScroll" onclick="SetReaderMode('scroll')" class="px-8 py-3 rounded-xl text-xs font-bold transition text-white">SCROLL</button>
+                    <button id="BtnPage" onclick="SetReaderMode('page')" class="px-8 py-3 rounded-xl text-xs font-bold transition text-white">PAGE</button>
                 </div>
                 <div class="w-full max-w-2xl bg-white/10 h-1.5 rounded-full overflow-hidden">
                     <div id="ReaderProgress" class="bg-indigo-500 h-full w-0 transition-all duration-300"></div>
